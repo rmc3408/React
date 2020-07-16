@@ -1,3 +1,4 @@
+
 //Regular function
 function print(age){
     console.log(age);  
@@ -7,7 +8,7 @@ function print(age){
   // Arrow function .. Write like this if no Return.
   let personal = (name, age) =>{
     console.log(name, age);
-  }
+  };
   
   personal('raph', 39);
   
@@ -15,7 +16,8 @@ function print(age){
   // If return ... here is full structure.
   const duplicate = (num) =>{
       return num * 2;
-  }
+  };
+
   console.log(duplicate(3));
   
   

@@ -1,6 +1,7 @@
 // Variable LET
 let myname = 1;
 console.log(myname);
+
 // Variable LET
 let mynum = 5;
 console.log(mynnum);
