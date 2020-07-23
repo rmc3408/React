@@ -4,7 +4,7 @@ https://jsbin.com/?html,css,js,output
 
 ### Spread & Rest
 keyword `...`
-split or merge
+spread(join) or merge
 
 
 
