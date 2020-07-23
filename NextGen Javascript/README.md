@@ -2,19 +2,21 @@
 
 https://jsbin.com/?html,css,js,output
 
-### Spread & Rest
+
+### Destructing
+extract element from Array or Object.
+
+
+### Spread & Rest (used in Arrays or Objects)
 keyword `...`
 spread(join) or merge
-
 
 
 ### Classes
 - property 
 name = 'Max'
-
 - usage
 keyword new + Constructor
-
 - Inheritance
 keyword extends
 
