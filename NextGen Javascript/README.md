@@ -3,6 +3,10 @@
 https://jsbin.com/?html,css,js,output
 
 
+### Map
+
+### Inference
+
 ### Destructing
 extract element from Array or Object.
 
