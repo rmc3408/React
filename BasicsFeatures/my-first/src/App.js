@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'; //import default and one element
 import './App.css';
+import Person from './Person/Person.js';
 
 class App extends Component {
   render() {
-    return (
+    return (                      // return JSX, not HTML, () is syntax block.
+      /* Only allow one block ( <div>  </div>) per render! */
       <div className="App">
-        
-        <h1> Hello Raphael</h1>
-        
+        <h1> Hello Raphael </h1>
+        <Person />
 
-
-        
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
+    //return React.createElement('div', {className: App },       //same as before, just to explain JSX
+    //          React.createElement('h1', null, 'hi, ', 'my name is Raph'));
   }
+
+
 }
 
-export default App;
+export default App; //export to index
