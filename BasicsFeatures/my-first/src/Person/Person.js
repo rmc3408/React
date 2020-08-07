@@ -7,7 +7,7 @@ const person = (props) => {
         <div>
             <p> I'm a person called {props.name}! I have {props.age} ,
      but I look like {Math.floor(Math.random() * 40)} years old! </p>
-            <p> {props.children} = element between open/close tag</p>
+            <p> {props.children}</p>
         </div>)
 
 };
