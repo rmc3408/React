@@ -3,13 +3,12 @@ import './App.css';
 import Person from './Person/Person.js';
 
 class App extends Component {
+  // State properties (variable of class Components) can be use dynamic.
   state = {
     persons: [
       { name="Raph", age="39" },
       { name="Emma", age="5" },
-      { name="Max", age="29" }
-      
-    ]
+      { name="Max", age="29" } ]
   };
 
   render() {
