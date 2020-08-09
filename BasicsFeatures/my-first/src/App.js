@@ -3,8 +3,14 @@ import './App.css';
 import Person from './Person/Person.js';
 
 class App extends Component {
-  
-
+  state = {
+    persons: [
+      { name="Raph", age="39" },
+      { name="Emma", age="5" },
+      { name="Max", age="29" }
+      
+    ]
+  };
 
   render() {
     return (                      // return JSX, not HTML, () is syntax block.
@@ -12,8 +18,9 @@ class App extends Component {
       <div className="App">
         <h1> Hello Raphael </h1>
         <button> Switch name</button>
-        <Person name="Raph" age="39"/> 
-        <Person name="Max" age="29"/>
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} /> 
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
         <Person name="Ivan" age="45"> My Party: </Person>
         
 
