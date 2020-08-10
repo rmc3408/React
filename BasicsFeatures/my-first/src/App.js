@@ -12,7 +12,7 @@ class App extends Component {
     zipcode: "20551"
   };
 
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
     console.log("clicked");
     //Dont work = {this.state.persons[0].name = 'Ivanovitch'}
     this.setState({
@@ -20,7 +20,7 @@ class App extends Component {
       persons: [
         { name:"Raphael", age:"39" },
         { name:"Emma", age:"5" },
-        { name:"Maximillian", age:"29" } ]
+        { name: newName , age:"29" } ]
 
     });
   }
@@ -30,11 +30,11 @@ class App extends Component {
                                   /* Only allow one block ( <div>  </div>) per render! */
       <div className="App">
         <h1> Hello Raphael </h1>
-        <button onClick={this.switchNameHandler}> Switch name</button>
+        <button onClick={this.switchNameHandler.bind(this, "John")}> Switch name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} /> 
         <Person transferClick={this.switchNameHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
-        <Person name="Ivan" age="45"> My Party: </Person>
+        <Person transferClick={this.switchNameHandler.bind(this, 'Emmilia')} name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+        <Person  name="Ivan" age="45"> My Party: </Person>
         
 
       </div>
