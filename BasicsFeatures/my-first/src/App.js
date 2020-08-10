@@ -32,7 +32,7 @@ class App extends Component {
         <h1> Hello Raphael </h1>
         <button onClick={this.switchNameHandler}> Switch name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} /> 
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+        <Person transferClick={this.switchNameHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}/>
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
         <Person name="Ivan" age="45"> My Party: </Person>
         
