@@ -39,9 +39,10 @@ class App extends Component {
   
 
   render() {
+    
     const mystyle = {
-      background: 'silver',
-      fontsize: '3rem',
+      color: 'red',
+      fontSize: '2rem'
   
     };
 
