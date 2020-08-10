@@ -18,11 +18,22 @@ class App extends Component {
     this.setState({
       //repeat all content of property key and do not discart others. Merge.
       persons: [
-        { name:"Raphael", age:"39" },
-        { name:"Emma", age:"5" },
-        { name: newName , age:"29" } ]
+        { name: "Raphael", age: "39" },
+        { name: "Emma", age: "5" },
+        { name: newName, age: "29" }]
 
     });
+  }
+  nameHandler = (event) => {
+      this.setState({
+        persons: [
+          
+          { name: "Emma", age: "5" },
+          { name:event.target.value , age:"39" },
+          { name: "Servi" , age:"29" } ]
+  
+      }); 
+      
   }
 
   render() {
@@ -32,7 +43,7 @@ class App extends Component {
         <h1> Hello Raphael </h1>
         <button onClick={this.switchNameHandler.bind(this, "John")}> Switch name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} /> 
-        <Person transferClick={this.switchNameHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+        <Person changed={this.nameHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}/>
         <Person transferClick={this.switchNameHandler.bind(this, 'Emmilia')} name={this.state.persons[2].name} age={this.state.persons[2].age}/>
         <Person  name="Ivan" age="45"> My Party: </Person>
         
