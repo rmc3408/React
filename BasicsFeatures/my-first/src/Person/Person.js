@@ -8,7 +8,7 @@ const person = (props) => {
         <p onClick={props.transferClick}> I'm a person called {props.name}! I have {props.age} ,
      but I look like {Math.floor(Math.random() * 40)} years old! </p>
             <p> {props.children}</p>
-            <input type="text" onChange={props.changed} />
+            <input type="text" onChange={props.changed} value={props.name}/>
         </div>)
 
 };
