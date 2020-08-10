@@ -6,13 +6,23 @@ class App extends Component {
   // State properties (variable of class Components) can be use dynamic.
   state = {
     persons: [
-      { name="Raph", age="39" },
-      { name="Emma", age="5" },
-      { name="Max", age="29" } ]
+      { name:"Raph", age:"39" },
+      { name:"Emma", age:"5" },
+      { name: "Max", age: "29" }],
+    zipcode: "20551"
   };
 
   switchNameHandler = () => {
     console.log("clicked");
+    //Dont work = {this.state.persons[0].name = 'Ivanovitch'}
+    this.setState({
+      //repeat all content of property key and do not discart others. Merge.
+      persons: [
+        { name:"Raphael", age:"39" },
+        { name:"Emma", age:"5" },
+        { name:"Maximillian", age:"29" } ]
+
+    });
   }
 
   render() {
