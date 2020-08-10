@@ -1,6 +1,7 @@
 //CREATE A FUNCTIONAL COMPONENT
 
 import React from 'react'; //to convert to JSX
+
 import './Person.css';
 
 const person = (props) => {

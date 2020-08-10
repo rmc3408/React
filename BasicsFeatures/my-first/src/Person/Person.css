@@ -1,7 +1,8 @@
 .Person{
     width: 60%;
-    margin: auto;
-    border: 2px solin rgb(27, 23, 23);
-    padding: 0 2px 3px 2px;
+    background-color: chocolate;
+    border: 2px solid saddlebrown;
+    box-shadow: black;
+    padding: 5px 2px 3px 2px;
     text-align: center;
 }
