@@ -13,7 +13,7 @@ class App extends Component {
       "molinaro.raphael@gmail.com",
       "rmc3408@protonmail.com",
       "rmolina9@my.centennialcollege.ca"],
-    firstname: "Centennial"
+    firstname: "RMC"
 
   };
 
@@ -21,7 +21,7 @@ class App extends Component {
     console.log("clicked");
   }
 
-  clickToState = (newFN) => { 
+  clickUsername = (newFN) => { 
     this.setState({
       username: [
         newFN,
@@ -30,7 +30,12 @@ class App extends Component {
 
     });
   }
+  clickFirstname = (newFN) => { 
+    this.setState({
+      firstname: newFN
 
+    });
+  }
 
   render() {
     return (
@@ -57,9 +62,10 @@ class App extends Component {
           
           <button onClick={this.checkButton}>Change to names </button>
 
-          <Useroutput transferClick={this.clickToState.bind(this, "Google Mail")}
+          <Useroutput transferClick={this.clickUsername.bind(this, "Google Mail")}
             username={this.state.username[0]} />
-          <Useroutput username={this.state.username[1]} />
+          <Useroutput transferClick={this.clickFirstname.bind(this, "GitHub")}
+            username={this.state.username[1]} firstname={this.state.firstname} />
           <Useroutput username={this.state.username[2]} />
 
           <Userinput />

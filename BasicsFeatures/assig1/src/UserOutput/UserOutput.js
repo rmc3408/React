@@ -3,7 +3,7 @@ import React from 'react';
 const useroutput = (props) => {
     return (
         <div> 
-        <p onClick={props.transferClick}> My account is {props.username} </p>
+            <p onClick={props.transferClick}> Account: {props.username} = {props.firstname} </p>
         
         
         <p>
