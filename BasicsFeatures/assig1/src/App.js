@@ -17,8 +17,15 @@ class App extends Component {
 
   };
 
-  const changeState = () => { 
+  checkButton = () => { 
+    console.log("clicked");
+  }
 
+  clickToState = (newValue) => { 
+    this.state = {
+      firstname: newValue
+
+    };
   }
 
 
@@ -39,16 +46,17 @@ class App extends Component {
           
           <Userinput /><Userinput />
 
-          <Useroutput username={this.state.username[1]} />
           <Useroutput username={this.state.username[0]} />
+          <Useroutput username={this.state.username[1]} />
           <Useroutput username={this.state.username[2]} />
 
           <Userinput /><Userinput />
+          <button onClick={this.checkButton}>Change to names </button>
 
+          <Useroutput onClick={this.clickToState.bind(this, "Gmail")} username={this.state.username[1]} />
           <Useroutput username={this.state.username[1]} />
-          <Useroutput username={this.state.username[0]} />
           <Useroutput username={this.state.username[2]} />
-          
+
           <Userinput />
           
       </section>

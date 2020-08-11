@@ -3,7 +3,7 @@ import React from 'react';
 const useroutput = (props) => {
     return (
         <div> 
-        <p> My account is {props.username} </p>
+        <p> My account is {props.username} and First is {props.firstname} </p>
         
         
         <p>
@@ -12,7 +12,7 @@ const useroutput = (props) => {
             - Output multiple UserOutput components in the App component (any paragraph texts of your choice)
             - Pass a username (of your choice) to UserOutput via props and display it there
             - Add state to the App component (- the username) and pass the username to the UserOutput component
-            Add a method to manipulate the state (- an event-handler method)
+            - Add a method to manipulate the state (- an event-handler method)
             Pass the event-handler method reference to the UserInput component and bind it to the input-change event
             Ensure that the new input entered by the user overwrites the old username passed to UserOutput
             Add two-way-binding to your input (in UserInput) to also display the starting username
