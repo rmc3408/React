@@ -68,8 +68,16 @@ class App extends Component {
             username={this.state.username[1]} firstname={this.state.firstname} />
           <Useroutput username={this.state.username[2]} />
 
-          <Userinput />
+          <Userinput /><Userinput />
           
+          
+          <Useroutput transferClick={this.clickUsername.bind(this, "Google Mail")}
+            username={this.state.username[0]} />
+          <Useroutput transferClick={this.clickFirstname.bind(this, "GitHub")}
+            username={this.state.username[1]} firstname={this.state.firstname} />
+          <Useroutput username={this.state.username[2]} />
+
+
       </section>
     </div>
     );
