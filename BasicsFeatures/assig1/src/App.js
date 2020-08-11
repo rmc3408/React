@@ -53,7 +53,7 @@ class App extends Component {
           <Userinput /><Userinput />
           <button onClick={this.checkButton}>Change to names </button>
 
-          <Useroutput onClick={this.clickToState.bind(this, "Gmail")} username={this.state.username[1]} />
+          <Useroutput transferClick={this.clickToState.bind(this, "Gmail")} username={this.state.username[1]} />
           <Useroutput username={this.state.username[1]} />
           <Useroutput username={this.state.username[2]} />
 
