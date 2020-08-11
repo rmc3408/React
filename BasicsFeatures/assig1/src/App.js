@@ -18,10 +18,11 @@ class App extends Component {
 
       <section> 
 
-          
 
           <Userinput />
+
           <Useroutput />
+          <Useroutput  />
           
       </section>
     </div>
