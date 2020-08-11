@@ -13,7 +13,8 @@ class App extends Component {
       "molinaro.raphael@gmail.com",
       "rmc3408@protonmail.com",
       "rmolina9@my.centennialcollege.ca"],
-    firstname: "RMC"
+    firstname: "RMC",
+    title: ""
 
   };
 
@@ -36,6 +37,13 @@ class App extends Component {
 
     });
   }
+  enterForm = (event) => {
+    this.setState({
+      title: event.target.value
+    });
+
+  }
+
 
   render() {
     return (
@@ -47,37 +55,36 @@ class App extends Component {
       </header>
 
       <section> 
-
+          <br />
+          <h3> Property Label direct connected in UserOutPut component</h3>
           <Useroutput username="molinaro.raphael@gmail.com"/>
           <Useroutput username="rmc3408@protonmail.com" />
           <Useroutput username="rmolina9@my.centennialcollege.ca" />
           
-          <Userinput /><Userinput />
+          <hr />
+          <h3> UserInput dinamicly change title on UserOutPut component</h3>
+          <Userinput propertyToChange={this.enterForm}/>
+          <Useroutput title={this.state.title}/>
 
+          <hr />
+          <h3> UserOutput get info from State array </h3>
           <Useroutput username={this.state.username[0]} />
           <Useroutput username={this.state.username[1]} />
           <Useroutput username={this.state.username[2]} />
 
-          <Userinput /><Userinput />
+          <hr />
+          <h3> Button print console log EVENT </h3>
+            <button onClick={this.checkButton}>Change to names </button>
           
-          <button onClick={this.checkButton}>Change to names </button>
+          
+          <hr />
+          <h3> UserOutput change onClick event in paragraph </h3>
 
           <Useroutput transferClick={this.clickUsername.bind(this, "Google Mail")}
-            username={this.state.username[0]} />
+            username={this.state.username[0]} firstname={this.state.firstname}/>
           <Useroutput transferClick={this.clickFirstname.bind(this, "GitHub")}
             username={this.state.username[1]} firstname={this.state.firstname} />
-          <Useroutput username={this.state.username[2]} />
-
-          <Userinput /><Userinput />
-          
-          
-          <Useroutput transferClick={this.clickUsername.bind(this, "Google Mail")}
-            username={this.state.username[0]} />
-          <Useroutput transferClick={this.clickFirstname.bind(this, "GitHub")}
-            username={this.state.username[1]} firstname={this.state.firstname} />
-          <Useroutput username={this.state.username[2]} />
-
-
+         
       </section>
     </div>
     );
