@@ -9,8 +9,18 @@ import Useroutput from './UserOutput/UserOutput';
 class App extends Component {
   
   state = {
-    username: "rmc3408@protonmail.com"
+    username: [
+      "rmc3408@protonmail.com",
+      "molinaro.raphael@gmail.com",
+      "rmolina9@my.centennialcollege.ca"],
+    firstname: ""
+
   };
+
+  const changeState = () => { 
+
+  }
+
 
   render() {
     return (
@@ -24,12 +34,21 @@ class App extends Component {
       <section> 
 
           <Useroutput username="molinaro.raphael@gmail.com"/>
-          <Userinput />
-
           <Useroutput username="rmc3408@protonmail.com" />
-          <Userinput />
-
           <Useroutput username="rmolina9@my.centennialcollege.ca" />
+          
+          <Userinput /><Userinput />
+
+          <Useroutput username={this.state.username[1]} />
+          <Useroutput username={this.state.username[0]} />
+          <Useroutput username={this.state.username[2]} />
+
+          <Userinput /><Userinput />
+
+          <Useroutput username={this.state.username[1]} />
+          <Useroutput username={this.state.username[0]} />
+          <Useroutput username={this.state.username[2]} />
+          
           <Userinput />
           
       </section>
