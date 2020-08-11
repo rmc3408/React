@@ -9,9 +9,7 @@ const useroutput = () => {
             Pass a username (of your choice) to UserOutput via props and display it there
             Add state to the App component (=> the username) and pass the username to the UserOutput component
         </p>
-        <p> Pass a username (of your choice) to UserOutput via props and display it there
-            Add state to the App component (=> the username) and pass the username to the UserOutput component
-        </p>
+        
         
         <p>
             Add a method to manipulate the state (=> an event-handler method)
