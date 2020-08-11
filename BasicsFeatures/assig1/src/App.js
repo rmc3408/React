@@ -13,7 +13,7 @@ class App extends Component {
       "molinaro.raphael@gmail.com",
       "rmc3408@protonmail.com",
       "rmolina9@my.centennialcollege.ca"],
-    firstname: "RMC",
+    firstname: "John Doe",
     title: ""
 
   };
@@ -44,8 +44,16 @@ class App extends Component {
 
   }
 
-
   render() {
+
+    const myStyle = {
+      width: "70%",
+      margin: "auto",
+      backgroundColor: "lightBlue",
+      border: "5px solid orange"
+
+    };
+
     return (
     <div className="App">
         <header className="App-header">
@@ -55,36 +63,42 @@ class App extends Component {
       </header>
 
       <section> 
-          <br />
-          <h3> Property Label direct connected in UserOutPut component</h3>
+          <div className="groupBox">
+          <h3> Property Label direct connected via props in UserOutPut component</h3>
           <Useroutput username="molinaro.raphael@gmail.com"/>
           <Useroutput username="rmc3408@protonmail.com" />
           <Useroutput username="rmolina9@my.centennialcollege.ca" />
+          </div>
           
-          <hr />
-          <h3> UserInput dinamicly change title on UserOutPut component</h3>
-          <Userinput propertyToChange={this.enterForm}/>
+          <div className="inputbox"> 
+            <h3> UserInput dinamicly change title on UserOutPut component</h3>
+          <Userinput currentname={this.state.firstname}/>
+          <Userinput propertyToChange={this.enterForm} />
+          <Userinput propertyToChange={this.enterForm} currentname={this.state.title}/>
           <Useroutput title={this.state.title}/>
+          </div>
 
-          <hr />
+          <div className="groupBox">
           <h3> UserOutput get info from State array </h3>
           <Useroutput username={this.state.username[0]} />
           <Useroutput username={this.state.username[1]} />
           <Useroutput username={this.state.username[2]} />
+          </div>
 
-          <hr />
-          <h3> Button print console log EVENT </h3>
-            <button onClick={this.checkButton}>Change to names </button>
+        <div style={myStyle}>
+        <h3> Button print console log EVENT and inStyle</h3>
+        <button onClick={this.checkButton}>Change to names </button>
+        </div>       
           
-          
-          <hr />
-          <h3> UserOutput change onClick event in paragraph </h3>
 
-          <Useroutput transferClick={this.clickUsername.bind(this, "Google Mail")}
+        <div className="groupBox">
+        <h3> UserOutput change onClick event in paragraph </h3>
+        <Useroutput transferClick={this.clickUsername.bind(this, "Google Mail")}
             username={this.state.username[0]} firstname={this.state.firstname}/>
-          <Useroutput transferClick={this.clickFirstname.bind(this, "GitHub")}
+        <Useroutput transferClick={this.clickFirstname.bind(this, "GitHub")}
             username={this.state.username[1]} firstname={this.state.firstname} />
-         
+        </div>
+          
       </section>
     </div>
     );

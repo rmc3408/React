@@ -1,0 +1,15 @@
+.inputbox{
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(224, 175, 139);
+    border: 2px solid white;
+    box-shadow: saddlebrown;
+    padding: 5px 2px 3px 2px;
+    text-align: center;
+}
+input{
+    width: 300px;
+}
