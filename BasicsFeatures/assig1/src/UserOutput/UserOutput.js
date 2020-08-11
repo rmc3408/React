@@ -3,7 +3,7 @@ import React from 'react';
 const useroutput = (props) => {
     return (
         <div> 
-            <p> My account is {props.username} </p>
+        <p> My account is {props.username} </p>
         
         
         <p>
