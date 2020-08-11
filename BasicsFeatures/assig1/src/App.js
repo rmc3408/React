@@ -7,6 +7,11 @@ import Useroutput from './UserOutput/UserOutput';
 
 
 class App extends Component {
+  
+  state = {
+    username: "rmc3408@protonmail.com"
+  };
+
   render() {
     return (
     <div className="App">
@@ -18,11 +23,14 @@ class App extends Component {
 
       <section> 
 
-
+          <Useroutput username="molinaro.raphael@gmail.com"/>
           <Userinput />
 
-          <Useroutput />
-          <Useroutput  />
+          <Useroutput username="rmc3408@protonmail.com" />
+          <Userinput />
+
+          <Useroutput username="rmolina9@my.centennialcollege.ca" />
+          <Userinput />
           
       </section>
     </div>
