@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import logo from './logo.svg';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -45,8 +46,15 @@ class App extends Component {
 
     return (
       <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Section 04 </h1>
+          <p>List and Conditionals</p>
+      </header>
+        
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
+        
         <button 
           style={style}
           onClick={() => this.switchNameHandler('Maximilian!!')}>Switch Name</button>
