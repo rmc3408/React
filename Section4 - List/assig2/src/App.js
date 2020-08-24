@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import myValid from './Valid';
+import Valid from './Valid/Valid';
 
 class App extends Component {
   
-  
+  countInput = (event) => {
+
+
+  }
   
   render() {
     
@@ -19,7 +22,9 @@ class App extends Component {
           <p> List and Conditionals</p>
         </header>
         
-        
+        <label for='Valid'> Enter text: </label>
+        <Valid changed={this.countInput}/>
+
 
       </div>
     );

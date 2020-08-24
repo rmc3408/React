@@ -11,6 +11,4 @@ const inputList = (props) => {
     );
 
 };
-
-
-export default myValid;
+export default Valid;
