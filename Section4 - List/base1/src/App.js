@@ -45,7 +45,7 @@ class App extends Component {
   }
 
 
-  render () {
+  render() {
     const style = {
       backgroundColor: 'white',
       margin: '15px',
@@ -54,6 +54,24 @@ class App extends Component {
       padding: '8px',
       cursor: 'pointer'
     };
+
+    let personVariable = null;
+    if (this.state.showNames) {
+      personVariable = (
+      < div >
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age} />
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+          click={this.switchNameHandler.bind(this, 'Raphael')}
+          changed={this.nameChangedHandler} >My Hobbies: Racing</Person>
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age} />
+      </div>);
+    }
 
     return (
       <div className="App">
@@ -71,6 +89,10 @@ class App extends Component {
         <button 
           style={style}
           onClick={this.toggleListNames}>Toggle List of Name</button>
+        {/* Best Solution */} 
+        {personVariable}
+        
+        {/* Solution 02 
         {this.state.showNames ?
           <div>
             <Person
@@ -86,6 +108,11 @@ class App extends Component {
               age={this.state.persons[2].age} />
           </div>
           : null}
+          */}
+        
+        
+        
+
       </div>
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
