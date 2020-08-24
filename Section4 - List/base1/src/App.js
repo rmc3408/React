@@ -70,7 +70,6 @@ class App extends Component {
             return (<Person
               /* click={this.deleteNameHandler.bind(this, index)}*/ 
               click={() => this.deleteNameHandler(index)}
-             
               name={item.name}
               age={item.age} />)  
           })}
@@ -78,7 +77,7 @@ class App extends Component {
       );
     }
           
-    
+    /** 
     let personVariable = null;
     if (this.state.showNames) {
       personVariable = (
@@ -96,6 +95,7 @@ class App extends Component {
           age={this.state.persons[2].age} />
       </div>);
     }
+    */
 
     return (
       <div className="App">
@@ -114,12 +114,14 @@ class App extends Component {
           style={style}
           onClick={this.toggleListNames}>Toggle List of Name</button>
         {/* Best Solution */} 
-        {personVariable}
+        {/*personVariable*/}
+        
+        
         <hr />
         <h2> Render a list using map function</h2>
         <button 
           style={style}
-          onClick={this.deleteNameHandler}>Toggle List of Name</button>
+          onClick={this.toggleListNames}>Toggle List of Name</button>
         {personMap}
         
         {/* Solution 02 
