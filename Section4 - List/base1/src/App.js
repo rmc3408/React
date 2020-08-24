@@ -29,9 +29,9 @@ class App extends Component {
   nameChangedHandler = (event) => {
     this.setState( {
       persons: [
-        { name: 'Max', age: 28 },
-        { name: event.target.value, age: 29 },
-        { name: 'Stephanie', age: 26 }
+        { id: '002', name: 'Max', age: 28 },
+        { id: '003',name: event.target.value, age: 29 },
+        { id: '004',name: 'Stephanie', age: 26 }
       ]
     } )
   }
@@ -45,7 +45,9 @@ class App extends Component {
   }
 
   deleteNameHandler = (numSelected) => { 
-    let totalPeople = this.state.persons;
+    //let totalPeople = this.state.persons; //do not copy only reference.
+    //let totalPeople = this.state.persons.slice();
+    let totalPeople = [...this.state.persons];
     totalPeople.splice(numSelected, 1);
     this.setState({persons: totalPeople});
 
@@ -71,7 +73,8 @@ class App extends Component {
               /* click={this.deleteNameHandler.bind(this, index)}*/ 
               click={() => this.deleteNameHandler(index)}
               name={item.name}
-              age={item.age} />)  
+              age={item.age}
+              key={id} />)  
           })}
         </div>
       );
@@ -119,9 +122,6 @@ class App extends Component {
         
         <hr />
         <h2> Render a list using map function</h2>
-        <button 
-          style={style}
-          onClick={this.toggleListNames}>Toggle List of Name</button>
         {personMap}
         
         {/* Solution 02 
