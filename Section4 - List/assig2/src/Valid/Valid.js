@@ -1,12 +1,11 @@
 import React from 'react';
 
-const inpList = (props) => {
+const inputList = (props) => {
     return (
         <div>
             <input type='text'
-                name={props.name}
-                
-            />
+                onChange={props.changed}
+                value={props.word}/>
 
         </div>
     );
