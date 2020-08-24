@@ -8,7 +8,7 @@ class App extends Component {
     persons: [
       { name: 'Max', age: 28 },
       { name: 'Manu', age: 29 },
-      { name: 'Stephanie', age: 26 }
+      { name: 'Minnie', age: 26 }
     ],
     otherState: 'some other value',
     showNames: true
@@ -44,6 +44,13 @@ class App extends Component {
     });
   }
 
+  deleteNameHandler = (numSelected) => { 
+    let totalPeople = this.state.persons;
+    totalPeople.splice(numSelected, 1);
+    this.setState({persons: totalPeople});
+
+
+  }
 
   render() {
     const style = {
@@ -55,6 +62,23 @@ class App extends Component {
       cursor: 'pointer'
     };
 
+    let personMap = null;
+    if (this.state.showNames) {
+      personMap = (
+        <div>
+          {this.state.persons.map((item, index) => { 
+            return (<Person
+              /* click={this.deleteNameHandler.bind(this, index)}*/ 
+              click={() => this.deleteNameHandler(index)}
+             
+              name={item.name}
+              age={item.age} />)  
+          })}
+        </div>
+      );
+    }
+          
+    
     let personVariable = null;
     if (this.state.showNames) {
       personVariable = (
@@ -91,6 +115,12 @@ class App extends Component {
           onClick={this.toggleListNames}>Toggle List of Name</button>
         {/* Best Solution */} 
         {personVariable}
+        <hr />
+        <h2> Render a list using map function</h2>
+        <button 
+          style={style}
+          onClick={this.deleteNameHandler}>Toggle List of Name</button>
+        {personMap}
         
         {/* Solution 02 
         {this.state.showNames ?
