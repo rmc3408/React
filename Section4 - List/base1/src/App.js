@@ -6,9 +6,9 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { name: 'Max', age: 28 },
-      { name: 'Manu', age: 29 },
-      { name: 'Minnie', age: 26 }
+      { id: '002', name: 'Max', age: 28 },
+      { id: '003', name: 'Manu', age: 29 },
+      { id: '004', name: 'Minnie', age: 26 }
     ],
     otherState: 'some other value',
     showNames: true
@@ -29,12 +29,32 @@ class App extends Component {
   nameChangedHandler = (event) => {
     this.setState( {
       persons: [
-        { id: '002', name: 'Max', age: 28 },
-        { id: '003',name: event.target.value, age: 29 },
-        { id: '004',name: 'Stephanie', age: 26 }
+        { name: 'Max', age: 28 },
+        { name: event.target.value, age: 29 },
+        { name: 'Stephanie', age: 26 }
       ]
     } )
   }
+
+  nameModifier = (event, Theid) => {
+    const personNumber = this.state.persons.findIndex(
+      p => { return p.id === Theid}
+    );
+    
+    //Create Object to modify
+    const SpecificPerson = { ...this.state.persons[personNumber] };
+    SpecificPerson.name = event.target.value;
+    
+    //Update Array of Persons
+    const personsArray = [...this.state.persons];
+    personsArray[personNumber] = SpecificPerson;
+
+    this.setState({
+      persons: personsArray
+    });
+  }
+
+
 
   toggleListNames = () => {
     let nameNow = this.state.showNames;
@@ -53,7 +73,7 @@ class App extends Component {
 
 
   }
-
+/**    RENDER START HERE */
   render() {
     const style = {
       backgroundColor: 'white',
@@ -74,7 +94,9 @@ class App extends Component {
               click={() => this.deleteNameHandler(index)}
               name={item.name}
               age={item.age}
-              key={id} />)  
+              key={item.id}
+              changed={(event) => { this.nameModifier(event, item.id) }}
+            />)  
           })}
         </div>
       );
@@ -107,6 +129,7 @@ class App extends Component {
           <h1 className="App-title">Section 04 </h1>
           <p>List and Conditionals</p>
       </header>
+      
         
              
         <button 
@@ -118,9 +141,7 @@ class App extends Component {
           onClick={this.toggleListNames}>Toggle List of Name</button>
         {/* Best Solution */} 
         {/*personVariable*/}
-        
-        
-        <hr />
+
         <h2> Render a list using map function</h2>
         {personMap}
         
