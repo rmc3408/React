@@ -5,7 +5,7 @@ const charList = (props) => {
     return (
         <div className='result'>
         <p> Char component</p>
-        <p> {props.oneChar}  </p>
+        <p> {props.letter}  </p>
         </div>
     );
  };

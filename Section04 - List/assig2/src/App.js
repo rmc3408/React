@@ -16,36 +16,33 @@ class App extends Component {
 
   //Function to output the input.
   countInput = (event) => {
+    
+    //save the event in Array
+    let fullword = event.target.value;
+    let wordArray = [];
+    wordArray = fullword.split();        
+    
+    //Update Array of Persons
+    let charArray = [...this.state.charWord];
+    charArray = wordArray;
+
     this.setState({
       text: event.target.value,
-      size: event.target.value.length
+      size: event.target.value.length,
+      charWord: charArray
     });
   }
 
-  separation = (event) => {
-    //Split word in array
-    let fullword = event.target.value;
-    let wordArray = [];
-    wordArray = fullword.split();
-
-    //Save array in State
-    let newCharState = [...this.state.charWord];
-    newCharState = wordArray;
-    this.setState(
-      {charWord: newCharState}
-    );
-  };
-
-
-
   render() {
 
-    let wordSeparate = null;
-    if (this.state.charWord != null) {
-      wordSeparate = (
+    //EVERY CHANGE will RENDER AGAIN
+    let wordMap = null;
+    if (this.state.charWord !== null) {
+      wordMap = (
         <div>
-          {this.state.charWord.map((item) => {
-            return <CharComp oneChar={item} />;
+          {this.state.charWord.map((item, index) => {
+            return <CharComp letter={item} />
+
           })}
         </div>
       );
@@ -61,13 +58,14 @@ class App extends Component {
 
         <div className='boxcontainer'>
           <input className="form" type='text'
-            //onChange={this.countInput}
-            onChange={this.separation} />
+            onChange={this.countInput} />
         <ValidationComp txt={this.state.text} num={this.state.size} />
         </div>
 
         <div className='boxcontainer'>
-        <CharComp oneChar={wordSeparate} />
+
+{/* CharComp Component Output list */}
+          {wordMap}
         </div>
 </div>
     );

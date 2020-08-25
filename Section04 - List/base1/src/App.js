@@ -141,13 +141,14 @@ class App extends Component {
 
 
         <h2> Render a list using map function</h2>
-        {personMap}
+        
+        
         {/* Best Solution */}
+        {personMap}
+        
+
         {/*personVariable*/}
-
-
-        {
-          /**  Show All Item from ARRAY - OLD PROCEDURE
+          {/**  Show All Item from ARRAY - OLD PROCEDURE
               let personVariable = null;
               if (this.state.showNames) {
                 personVariable = (
