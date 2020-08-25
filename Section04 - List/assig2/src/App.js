@@ -11,7 +11,11 @@ class App extends Component {
   state = {
     text: 'RAP',
     size: 3,
-    charWord: ['R', 'A', 'P']
+    charWord: [
+      { code: 'R' },
+      { code: 'A' },
+      { code: 'P' }
+    ]
   };
 
   //Function to output the input.
@@ -40,8 +44,8 @@ class App extends Component {
     if (this.state.charWord !== null) {
       wordMap = (
         <div>
-          {this.state.charWord.map((item, index) => {
-            return <CharComp letter={item} />
+          {this.state.charWord.map(item => {
+            return <CharComp letter={item.code} />
 
           })}
         </div>
