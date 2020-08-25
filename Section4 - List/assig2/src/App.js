@@ -24,14 +24,7 @@ class App extends Component {
 
   render() {
 
-    let textVariable = null;
-    if (this.state.size > 5) {
-      textVariable = (
-        <div>  <p> Nice text </p>  </div>);
-    } else {
-      textVariable = (
-        <div>  <p> Still small text </p>  </div>);
-    }
+    
 
     return (
       <div className="App">
@@ -43,10 +36,8 @@ class App extends Component {
 
         
         <input type='text' onChange={this.countInput}/>
-        <h6> {this.state.text}  = word size is {this.state.size}</h6>
-        
         <ValidationComp txt={this.state.text} num={this.state.size} />
-        {textVariable}
+        
 
 
       </div>
