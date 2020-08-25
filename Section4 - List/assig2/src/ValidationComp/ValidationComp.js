@@ -1,5 +1,6 @@
 import React from 'react';
 import './ValidationComp.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inputList = (props) => {
 
@@ -15,7 +16,7 @@ const inputList = (props) => {
     }
 
     return (
-        <div class='boxcontainer'>
+        <div>
             <p> Inside component_ New word: {props.txt}, size {props.num} </p>
             {textVariable}
 

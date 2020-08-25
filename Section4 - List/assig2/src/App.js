@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 import ValidationComp from './ValidationComp/ValidationComp';
 
 class App extends Component {
@@ -27,17 +28,17 @@ class App extends Component {
     
 
     return (
-      <div className="App">
+      <div className="App" >
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Assigment 02</h1>
-          <p> List and Conditionals</p>
+          
         </header>
 
-        
+        <div className='boxcontainer'>
         <input type='text' onChange={this.countInput}/>
         <ValidationComp txt={this.state.text} num={this.state.size} />
-        
+        </div>
 
 
       </div>
