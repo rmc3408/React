@@ -4,7 +4,8 @@ import './UserInput.css';
 const userinput = (props) => {
     return (
     <div>
-    <input type="text" onChange={props.propertyToChange} value={props.currentname}/>
+            <input type="text" onChange={props.propertyToChange} value={props.currentname} />
+            
     </div>
         
 
