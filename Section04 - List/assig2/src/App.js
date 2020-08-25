@@ -36,7 +36,7 @@ class App extends Component {
         </header>
 
         <div className='boxcontainer'>
-        <input type='text' onChange={this.countInput}/>
+        <input className="form" type='text' onChange={this.countInput}/>
         <ValidationComp txt={this.state.text} num={this.state.size} />
         </div>
 
