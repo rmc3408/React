@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-
+import CharComp from './CharComp/CharComp';
 import ValidationComp from './ValidationComp/ValidationComp';
 
 class App extends Component {
 
   //pre-defined input
   state = {
-    text: null,
+    text: 'RAPH',
     size: null
   };
 
@@ -23,8 +23,20 @@ class App extends Component {
 
 
 
+
   render() {
 
+    let wordSeparate = null;
+    if (this.state.text != null) {
+      wordSeparate = (
+      <p>
+          {this.state.text}
+
+      </p>
+
+      );
+    }
+    
     
 
     return (
@@ -39,6 +51,11 @@ class App extends Component {
         <input className="form" type='text' onChange={this.countInput}/>
         <ValidationComp txt={this.state.text} num={this.state.size} />
         </div>
+
+        <div className='boxcontainer'>
+        <CharComp />
+        </div>
+
 
 
       </div>
