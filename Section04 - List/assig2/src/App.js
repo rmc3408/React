@@ -9,8 +9,9 @@ class App extends Component {
 
   //pre-defined input
   state = {
-    text: 'RAPH',
-    size: null
+    text: 'RAP',
+    size: 3,
+    charWord: ['R', 'A', 'P']
   };
 
   //Function to output the input.
@@ -21,24 +22,35 @@ class App extends Component {
     });
   }
 
+  separation = (event) => {
+    //Split word in array
+    let fullword = event.target.value;
+    let wordArray = [];
+    wordArray = fullword.split();
+
+    //Save array in State
+    let newCharState = [...this.state.charWord];
+    newCharState = wordArray;
+    this.setState(
+      {charWord: newCharState}
+    );
+  };
 
 
 
   render() {
 
     let wordSeparate = null;
-    if (this.state.text != null) {
+    if (this.state.charWord != null) {
       wordSeparate = (
-      <p>
-          {this.state.text}
-
-      </p>
-
+        <div>
+          {this.state.charWord.map((item) => {
+            return <CharComp oneChar={item} />;
+          })}
+        </div>
       );
     }
-    
-    
-
+  
     return (
       <div className="App" >
         <header className="App-header">
@@ -48,17 +60,16 @@ class App extends Component {
         </header>
 
         <div className='boxcontainer'>
-        <input className="form" type='text' onChange={this.countInput}/>
+          <input className="form" type='text'
+            //onChange={this.countInput}
+            onChange={this.separation} />
         <ValidationComp txt={this.state.text} num={this.state.size} />
         </div>
 
         <div className='boxcontainer'>
-        <CharComp />
+        <CharComp oneChar={wordSeparate} />
         </div>
-
-
-
-      </div>
+</div>
     );
   }
 }
