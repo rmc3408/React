@@ -44,8 +44,9 @@ class App extends Component {
     if (this.state.charWord !== null) {
       wordMap = (
         <div>
-          {this.state.charWord.map(item => {
-            return <CharComp letter={item.code} />
+          {this.state.charWord.map((item, index) => {
+            return <CharComp letter={item.code}
+            key={index} />
 
           })}
         </div>
