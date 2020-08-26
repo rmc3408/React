@@ -79,7 +79,8 @@ class App extends Component {
   render() {
 
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'red',
+      color: 'white',
       margin: '15px',
       font: 'inherit',
       border: '1px solid blue',
@@ -90,6 +91,9 @@ class App extends Component {
     //EVERY CHANGE will RENDER AGAIN
     let personMap = null;
     if (this.state.showNames) {
+      
+      style.backgroundColor = 'Green';
+
       personMap = (
         <div>
           {this.state.persons.map((item, index) => {
@@ -105,6 +109,7 @@ class App extends Component {
           })}
         </div>
       );
+      
     }
 
 
