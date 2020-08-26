@@ -9,34 +9,22 @@ class App extends Component {
 
   //pre-defined input
   state = {
-    text: 'RAP',
-    size: 3,
-    charWord: [
-      { id: 1, code: 'R' },
-      { id: 2, code: 'A' },
-      { id: 3, code: 'P' }
-    ]
+    text: 'RA',
+    charWord: [ 'R', 'A']
   };
 
   //Function to output the input.
-  countInput = (minievent, index) => {
+  countInput = (minievent) => {
     
-    //Find same lettler by index argument.
-    const positionLetter = this.state.charWord.findIndex(
-      l => { return l.id == index}
-    );
-    
-    //Create new Object
-    const SpecificCharWord = { ...this.state.charWord[positionLetter] };
-    SpecificCharWord.code = minievent.target.value;
+    //Receive Input with new word
+    let newTxt = minievent.target.value;
 
-    //save the event in Array
-    let wordArray = [...this.state.charWord];
-    wordArray[positionLetter] = SpecificCharWord;        
-    
-    //Update Array of Persons
-    
+    //Create a array with Each lettler of Text
+    let wordArray = newTxt.split();
+       
+    //Update Dull Word and Array of letters
     this.setState({
+      text: newTxt,
       charWord: wordArray
     });
   }
@@ -51,7 +39,7 @@ class App extends Component {
           {this.state.charWord.map((item, index) => {
             return <CharComp letter={item.code}
               key={index}
-              onchange={(event) => this.countInput(event, item.id)}/>
+              />
 
           })}
         </div>
@@ -68,8 +56,10 @@ class App extends Component {
 
         <div className='boxcontainer'>
           <input className="form" type='text'
-            onChange={this.countInput.bind(this)} />
-        <ValidationComp txt={this.state.text} num={this.state.size} />
+            onchange={(event) => this.countInput(event)} />
+          
+
+        <ValidationComp txt={this.state.text} num={this.state.text.length} />
         </div>
 
         <div className='boxcontainer'>
