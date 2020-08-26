@@ -12,15 +12,20 @@ class App extends Component {
     text: 'RAP',
     size: 3,
     charWord: [
-      { code: 'R' },
-      { code: 'A' },
-      { code: 'P' }
+      { id: 1, code: 'R' },
+      { id: 2, code: 'A' },
+      { id: 3, code: 'P' }
     ]
   };
 
   //Function to output the input.
-  countInput = (event) => {
+  countInput = (event, index) => {
     
+    //Find same lettler by index argument.
+    const positionLetter = this.state.charWord.findIndex(
+      l => { return l.id == index}
+    );
+
     //save the event in Array
     let fullword = event.target.value;
     let wordArray = [];
@@ -46,7 +51,8 @@ class App extends Component {
         <div>
           {this.state.charWord.map((item, index) => {
             return <CharComp letter={item.code}
-            key={index} />
+              key={index}
+              onchange={(event) => this.countInput(event, item.id)}/>
 
           })}
         </div>
@@ -63,7 +69,7 @@ class App extends Component {
 
         <div className='boxcontainer'>
           <input className="form" type='text'
-            onChange={this.countInput} />
+            onChange={this.countInput.bind(this)} />
         <ValidationComp txt={this.state.text} num={this.state.size} />
         </div>
 
