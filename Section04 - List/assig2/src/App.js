@@ -19,26 +19,25 @@ class App extends Component {
   };
 
   //Function to output the input.
-  countInput = (event, index) => {
+  countInput = (minievent, index) => {
     
     //Find same lettler by index argument.
     const positionLetter = this.state.charWord.findIndex(
       l => { return l.id == index}
     );
+    
+    //Create new Object
+    const SpecificCharWord = { ...this.state.charWord[positionLetter] };
+    SpecificCharWord.code = minievent.target.value;
 
     //save the event in Array
-    let fullword = event.target.value;
-    let wordArray = [];
-    wordArray = fullword.split();        
+    let wordArray = [...this.state.charWord];
+    wordArray[positionLetter] = SpecificCharWord;        
     
     //Update Array of Persons
-    let charArray = [...this.state.charWord];
-    charArray = wordArray;
-
+    
     this.setState({
-      text: event.target.value,
-      size: event.target.value.length,
-      charWord: charArray
+      charWord: wordArray
     });
   }
 
