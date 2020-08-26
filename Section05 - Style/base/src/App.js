@@ -121,7 +121,7 @@ class App extends Component {
 
         <button
           style={style}
-          onClick={() => this.switchFullName}>full Name</button>
+          onClick={this.switchFullName}>full Name</button>
 
         <button
           style={style}
