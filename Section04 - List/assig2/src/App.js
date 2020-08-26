@@ -10,7 +10,7 @@ class App extends Component {
   //pre-defined input
   state = {
     text: 'RA',
-    charWord: [ 'R', 'A']
+    charWord: ['R', 'A']
   };
 
   //Function to output the input.
@@ -20,31 +20,50 @@ class App extends Component {
     let newTxt = minievent.target.value;
 
     //Create a array with Each lettler of Text
-    let wordArray = newTxt.split();
+    let wArray = newTxt.split();
        
     //Update Dull Word and Array of letters
     this.setState({
       text: newTxt,
-      charWord: wordArray
+      charWord: wArray
     });
   }
 
+  //Function to output the input.
+  deleteChar = (index) => {
+    console.log(index);
+    let newtext = this.state.text;
+    let ToCut = newtext.slice(index, index+1);
+    let newCut = newtext.replace(ToCut, '');
+    this.setState({text: newCut});
+
+    //Create a array with Each lettler of Text
+    //let wArray = newTxt.split('');
+       
+    //Update Dull Word and Array of letters
+    //this.setState({
+    //  text: newTxt,
+    //  charWord: wArray
+    //});
+  }
+
   render() {
+    
+    //String does not MAP... convert string to array FIRST
+    const name = this.state.text.split('');
+    const newName = name.map.call(name, eachLetter => {
+      return `${eachLetter}`
+    });
+    console.log(newName);
 
-    //EVERY CHANGE will RENDER AGAIN
-    let wordMap = null;
-    if (this.state.charWord !== null) {
-      wordMap = (
-        <div>
-          {this.state.charWord.map((item, index) => {
-            return <CharComp letter={item.code}
-              key={index}
-              />
 
-          })}
-        </div>
-      );
-    }
+    let wordArray = [...this.state.text];
+    const wordMap = wordArray.map((item, index) => {
+      return <CharComp letter={item} key={index}
+        toDel={() => { return this.deleteChar(index) }} />;
+    });
+      
+    
   
     return (
       <div className="App" >
@@ -56,15 +75,13 @@ class App extends Component {
 
         <div className='boxcontainer'>
           <input className="form" type='text'
-            onchange={(event) => this.countInput(event)} />
+            onChange={(event) => this.countInput(event)} />
           
-
-        <ValidationComp txt={this.state.text} num={this.state.text.length} />
+          <ValidationComp txt={this.state.text} num={this.state.text.length} />
         </div>
 
+        {/* CharComp Component Output list */}
         <div className='boxcontainer'>
-
-{/* CharComp Component Output list */}
           {wordMap}
         </div>
 </div>
