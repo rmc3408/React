@@ -1,13 +1,18 @@
 # React
 
-# Create React App
 
-https://create-react-app.dev/docs/getting-started/
+
+### ESLINT
+` npm install -g eslint`
+Install ESLINT from visual studio code MarketPlace
+` npm install --save-dev eslint-config-rallycoding`
+Create a file called .eslintrc containing ` { "extends": "rallycoding" } `
+
 
 ### Inside the folder to create a app with packages.
 `npx create-react-app my-first --scripts-version 1.1.5`
 
-# Useful Resources & Links
+### Useful Resources & Links
 
 create-react-app: https://github.com/facebookincubator/create-react-app
 Introducing JSX: https://reactjs.org/docs/introducing-jsx.html

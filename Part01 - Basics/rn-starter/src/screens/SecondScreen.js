@@ -1,11 +1,11 @@
-import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import React from 'react';
+import { Text, StyleSheet, View } from 'react-native';
 
 const CompScreen = () => {
-  let greeting = 'Good bye';
-  let saudation = { name: 'Manu' };
-  let info = <Text> {greeting}, {saudation.name} </Text>
-  let Fname = 'Raphael';
+  const greeting = 'Good bye';
+  const saudation = { name: 'Manu' };
+  const info = <Text> {greeting}, {saudation.name} </Text>;
+  const Fname = 'Raphael';
   
   return (<View>
     <Text style={myCSSstyle.myTitleClass}> Getting started with React</Text>
@@ -13,7 +13,6 @@ const CompScreen = () => {
     <Text> {greeting} </Text>
     <Text> {saudation.name} </Text>
     {info}
-
 
 
   </View>);
