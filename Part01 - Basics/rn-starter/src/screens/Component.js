@@ -1,14 +1,32 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 
 const CompScreen = () => {
-  return <Text style={mystyle.mytext}> my Component Screen</Text>;
+  let greeting = 'Good bye';
+  let saudation = { name: 'Manu' };
+  let info = <Text> {greeting}, {saudation.name} </Text>
+  let Fname = 'Raphael';
+  
+  return (<View>
+    <Text style={myCSSstyle.myTitleClass}> Getting started with React</Text>
+    <Text style={myCSSstyle.myTextClass}> My name is {Fname}</Text>
+    <Text> {greeting} </Text>
+    <Text> {saudation.name} </Text>
+    {info}
+
+
+
+  </View>);
 };
 
-const mystyle = StyleSheet.create({
-  mytext: {
-    fontSize: 30,
+const myCSSstyle = StyleSheet.create({
+  myTitleClass: {
+    fontSize: 45,
   },
+  myTextClass: {
+    fontSize: 20,
+    color: 'red'
+  }
 });
 
 export default CompScreen;
