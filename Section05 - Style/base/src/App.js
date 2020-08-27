@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './App.css';
 import logo from './logo.svg';
@@ -33,14 +34,13 @@ class App extends Component {
         { name: 'Andrea Pineda', age: 30 },
         { name: 'Luana Cesar', age: 30 }
       ]
-    })
+    });
   }
 
   //Function to Change name after update INPUT Form in LIST and conditional
   nameModifier = (event, Theid) => {
     const personNumber = this.state.persons.findIndex(
-      p => { return p.id === Theid }
-    );
+      p => { return p.id === Theid; });
 
     //Create Object to modify
     const SpecificPerson = { ...this.state.persons[personNumber] };
@@ -69,7 +69,7 @@ class App extends Component {
   deleteNameHandler = (numSelected) => {
     //let totalPeople = this.state.persons; //do not copy only reference.
     //let totalPeople = this.state.persons.slice();
-    let totalPeople = [...this.state.persons];
+    const totalPeople = [...this.state.persons];
     totalPeople.splice(numSelected, 1);
     this.setState({ persons: totalPeople });
 
