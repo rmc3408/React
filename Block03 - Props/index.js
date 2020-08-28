@@ -1,11 +1,9 @@
-import React from 'react';
-
 class App extends React.Component {
   render() {
     return(
       <div>
-        <Personal from="Raphael" to="Ivan"/>
-        
+        <Personal from="Raphael" to="Ivan" />
+        <Personal from="Andrea" to="Raphael" />
       </div >
     );
   }
