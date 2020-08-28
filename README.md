@@ -11,6 +11,7 @@ Install ESLINT from visual studio code MarketPlace
 
 Create a file called .eslintrc containing ` { "extends": "rallycoding" } `
 
+__If nothing else helps__ add SKIP_PREFLIGHT_CHECK=true to an .env file in your project.
 
 ### Inside the folder to create a app with packages.
 `npx create-react-app my-first --scripts-version 1.1.5`
