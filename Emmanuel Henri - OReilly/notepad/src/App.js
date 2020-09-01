@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+//import "./App.css";
 import Intro from "./Intro/Intro";
 import Header from "./Components/Header";
 import Grid from "./Components/Grid";
@@ -10,6 +10,12 @@ const owner = {
   age: 39,
   isEmployee: true,
 };
+
+const inStyles = {
+  textAlign: 'right'
+  
+}
+
 
 class App extends Component {
   constructor(props) {
@@ -56,15 +62,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div >
+        <div className={inStyles}> 
         <Header owner={owner} />
-
+        </div>
         <Form/>
 
         <Grid notes={this.state.notes} />
 
         <div>
-          <p> Variable USER using Objects outside Class = {owner.name} </p>
+          <p > Variable USER using Objects outside Class = {owner.name} </p>
           <Intro user={owner} />
           <p> Variable USER using State, object of the App Class {this.state.name}</p>
           <Intro user={this.state} />
