@@ -11,7 +11,7 @@ class Form extends React.Component{
     render() {
         return (
             <div>
-                <Form onSubmit={this.props.handleSubmit}>
+                <form onSubmit={this.props.handleSubmit}>
                     <label>Title: </label>
                     <input
                         name="currentTitle"
@@ -27,7 +27,7 @@ class Form extends React.Component{
                         onChange={this.props.handleChange}
                     /> 
                     <input type='submit' value='Add Note' />
-                </Form>
+                </form>
             </div>
         );
     };

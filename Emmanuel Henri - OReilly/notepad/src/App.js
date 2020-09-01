@@ -1,16 +1,15 @@
-import React, { Component } from 'react';
-import './App.css';
-import Intro from './Intro/Intro';
-import Header from './Components/Header';
-import Grid from './Components/Grid';
-import Form from './Components/Form';
+import React, { Component } from "react";
+import "./App.css";
+import Intro from "./Intro/Intro";
+import Header from "./Components/Header";
+import Grid from "./Components/Grid";
+import Form from "./Components/Form";
 
 const owner = {
   name: "Raphael",
   age: 39,
-  isEmployee: true
+  isEmployee: true,
 };
-
 
 class App extends Component {
   constructor(props) {
@@ -18,26 +17,25 @@ class App extends Component {
     this.state = {
       notes: [
         {
-        id: 1,
-        title: 'Add course notes',
-        details: 'Add your first task' 
+          id: 1,
+          title: "Add course notes",
+          details: "Add your first task",
         },
         {
           id: 2,
-          title: 'Add first Task',
-          details: 'What need to do first' 
+          title: "Add first Task",
+          details: "What need to do first",
         },
         {
           id: 3,
-          title: 'Add your next payment',
-          details: 'Company - Price' 
+          title: "Add your next payment",
+          details: "Company - Price",
         },
       ],
-      name: 'Ivan',
+      name: "Ivan",
       age: 45,
       currentTitle: '',
       currentDetails: ''
-
     };
   }
   /*componentDidMount() {
@@ -48,40 +46,29 @@ class App extends Component {
     const value = event.target.value;
 
     this.setState({
-      [name]: value
+      [name]: value,
     });
-
-
   }
   handleSubmit(event) {
     alert(`Your note ${this.state.currentTitle} is saved`);
     event.preventDefault();
   }
 
-
-
   render() {
     return (
       <div className="App">
         <Header owner={owner} />
-        
-        
-        <Form 
-          currentTitle={this.state.currentTitle}
-          currentDetails={this.state.currentDetails}
-          handleChange={this.state.handleChange}
-          handleSubmit={this.state.handleSubmit}
-        />
-        
+
+        <Form/>
+
         <Grid notes={this.state.notes} />
-        
-        <div> 
-        <p> Variable USER using Objects outside Class = {owner.name} </p>
-        <Intro user={owner} />
-        <p> Variable USER using State, object of the App Class = {this.state.name } </p>
-        <Intro user={this.state} />
+
+        <div>
+          <p> Variable USER using Objects outside Class = {owner.name} </p>
+          <Intro user={owner} />
+          <p> Variable USER using State, object of the App Class {this.state.name}</p>
+          <Intro user={this.state} />
         </div>
-        
       </div>
     );
   }
