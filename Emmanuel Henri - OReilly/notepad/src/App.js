@@ -71,7 +71,12 @@ class App extends Component {
     });
 
   }
+  deleteNote(id) {
+    firebase.database()
+      .ref(`/notes/${id}`)
+      .remove();
 
+  }
 
 
   componentWillMount() {
@@ -103,12 +108,8 @@ class App extends Component {
     
         });
       });
-    
-
-
-
-
   }
+
 
   render() {
     return (
@@ -124,7 +125,7 @@ class App extends Component {
         
         />
 
-        <Grid notes={this.state.notes} />
+        <Grid notes={this.state.notes} deleteNote={this.deleteNote.bind(this)} />
 
         {/* <div>
           <p > Variable USER using Objects outside Class = {owner.name} </p>
