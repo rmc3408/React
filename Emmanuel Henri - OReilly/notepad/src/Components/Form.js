@@ -34,7 +34,7 @@ class Form extends React.Component {
             </div>
             <div className="input-field col s2">
               <button
-                className="btn-large waves-effect waves-light"
+                className="btn-large teal lighten-2 waves-effect waves-light"
                 type="submit"
                 name="Action"
               > Add Note</button>

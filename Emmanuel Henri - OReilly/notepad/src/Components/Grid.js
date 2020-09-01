@@ -11,8 +11,11 @@ class Grid extends React.Component{
     
     render() {
         return (
-            <div>
+            <div className="row">
+                <ul>
                 {this.renderItems()}
+                </ul>
+                
             </div>
         );
     };
