@@ -65,11 +65,15 @@ class App extends Component {
       <div className="App">
         <Header owner={owner} />
         
-        <Grid notes={this.state.notes} />
+        
         <Form 
           currentTitle={this.state.currentTitle}
           currentDetails={this.state.currentDetails}
-          />
+          handleChange={this.state.handleChange}
+          handleSubmit={this.state.handleSubmit}
+        />
+        
+        <Grid notes={this.state.notes} />
         
         <div> 
         <p> Variable USER using Objects outside Class = {owner.name} </p>
