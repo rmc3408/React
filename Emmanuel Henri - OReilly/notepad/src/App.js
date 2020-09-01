@@ -58,9 +58,22 @@ class App extends Component {
     });
   }
   handleSubmit(event) {
-    alert(`Your note ${this.state.currentTitle} is saved`);
     event.preventDefault();
+    alert(`Your note ${this.state.currentTitle} is saved`);
+    const data = {
+      title: this.state.currentTitle,
+      details: this.state.currentDetails
+    };
+    firebase.database().ref('/notes').push(data, response => response);
+    this.setState({
+      currentTitle: '',
+      currentDetails: ''
+    });
+
   }
+
+
+
   componentWillMount() {
     firebase.initializeApp({ 
     apiKey: "AIzaSyATq633PXIe2odQFUrUik2wSCEYVx7OEMs",
@@ -103,7 +116,13 @@ class App extends Component {
         <div className={inStyles}> 
         <Header owner={owner} />
         </div>
-        <Form/>
+        <Form
+          currentTitle={this.state.currentTitle}
+          currentDetails={this.state.currentDetails}
+          handleChange={this.handleChange.bind(this)}
+          handleSubmit={this.handleSubmit.bind(this)}
+        
+        />
 
         <Grid notes={this.state.notes} />
 

@@ -11,9 +11,9 @@ class Form extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit} className="col s12">
+        <form onSubmit={this.props.handleSubmit} className="col block s10">
           <div className="row">
-            <div className="input-field col s3">
+            <div className="input-field col s2">
               <label>Title: </label>
               <input
                 name="currentTitle"
@@ -23,7 +23,7 @@ class Form extends React.Component {
               />
             </div>
 
-            <div className="input-field col s7">
+            <div className="input-field col s6">
               <label>Body: </label>
               <input
                 name="currentDetails"
