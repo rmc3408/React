@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 //import "./App.css";
-import Intro from "./Intro/Intro";
+//import Intro from "./Intro/Intro";
 import Header from "./Components/Header";
 import Grid from "./Components/Grid";
 import Form from "./Components/Form";
+import firebase from 'firebase';
+import _ from 'lodash';
 
 const owner = {
   name: "Raphael",
@@ -22,7 +24,7 @@ class App extends Component {
     super(props);
     this.state = {
       notes: [
-        {
+        {/*{
           id: 1,
           title: "Add course notes",
           details: "Add your first task",
@@ -36,7 +38,7 @@ class App extends Component {
           id: 3,
           title: "Add your next payment",
           details: "Company - Price",
-        },
+        },*/}
       ],
       name: "Ivan",
       age: 45,
@@ -70,6 +72,29 @@ class App extends Component {
     appId: "1:715052111786:web:16a025a940bea7b0737dd3",
     measurementId: "G-X481CY55C5"
     });
+    console.log('Firebase connection sucessful');
+
+    firebase.database()
+      .ref('/notes')
+      .on('value', snapshot => {
+        const fbstore = snapshot.val();
+        const store = _.map(fbstore, (value, id) => {
+          return {
+            id: id,
+            title: value.title,
+            details: value.details
+          };
+        });
+        this.setState({
+          notes: store
+    
+        });
+      });
+    
+
+
+
+
   }
 
   render() {
