@@ -59,6 +59,18 @@ class App extends Component {
     alert(`Your note ${this.state.currentTitle} is saved`);
     event.preventDefault();
   }
+  componentWillMount() {
+    firebase.initializeApp({ 
+    apiKey: "AIzaSyATq633PXIe2odQFUrUik2wSCEYVx7OEMs",
+    authDomain: "notepad-rmc3408.firebaseapp.com",
+    databaseURL: "https://notepad-rmc3408.firebaseio.com",
+    projectId: "notepad-rmc3408",
+    storageBucket: "notepad-rmc3408.appspot.com",
+    messagingSenderId: "715052111786",
+    appId: "1:715052111786:web:16a025a940bea7b0737dd3",
+    measurementId: "G-X481CY55C5"
+    });
+  }
 
   render() {
     return (
@@ -70,12 +82,12 @@ class App extends Component {
 
         <Grid notes={this.state.notes} />
 
-        <div>
+        {/* <div>
           <p > Variable USER using Objects outside Class = {owner.name} </p>
           <Intro user={owner} />
           <p> Variable USER using State, object of the App Class {this.state.name}</p>
           <Intro user={this.state} />
-        </div>
+        </div>*/}
       </div>
     );
   }
