@@ -6,7 +6,7 @@ __Udemy: The Modern React Bootcamp by Colt Steele__<br>
 Course: (https://www.udemy.com/modern-react-bootcamp/) <br>
 Course length: <b>39 hours</b>
 
-### <u>Part directory </u>
+### <u>ReactNative_Part directory </u>
 __Udemy: The Complete React Native + Hooks Course by Stephen Grinder__<br>
 Course: (https://www.udemy.com/course/the-complete-react-native-and-redux-course/) <br>
 Course length: <b>38 hours</b>
