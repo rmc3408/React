@@ -14,6 +14,7 @@ class Slot extends React.Component {
         <div>
         <h1> {frnd1} {frnd2} {frnd3} </h1>
         <h1> {fruits[rnd1]} {fruits[rnd2]} {fruits[rnd3]} </h1>
+        <p className={isWinner ? 'win' : 'lose'}> Results </p>
         <p> { isWinner ? <h3> Winner !</h3> : <h3> Lose !</h3> } </p>
       </div>
     );

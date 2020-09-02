@@ -1,12 +1,13 @@
 class App extends React.Component {
   render() {
     console.log(this.state);
+    
 
     return (
       <div>
         <div>
-          <Personal from="Raphael" to="Ivan" />
-          <Personal from="Andrea" to="Raphael" />
+          <Personal from="Raphael" to="Ivan"/>
+          <Personal from="Andrea" to="Raphael"/>
 
           <Personal
             from="Andrea"
@@ -19,7 +20,7 @@ class App extends React.Component {
           />
         </div>
 
-        <div>
+        <div style={{fontSize:'20px'}}>
           <Friend name="Emma" hobbies={["Piano", "ballet", "Dolls"]} />
           <Friend name="Ivan" hobbies={["Docs", "Books", "kisses"]} />
           <Friend hobbies={["Play", "Run", "Sleep"]} bangs={4} />
