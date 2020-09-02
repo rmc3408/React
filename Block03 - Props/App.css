@@ -1,0 +1,12 @@
+.Slot {
+    background-color: cadetblue;
+    border: 3px solid black;
+    margin: 30px 10px 30px 30px;
+    padding-left: 20px;
+
+}
+.Slot h3 {
+    background-color: darkblue;
+    color: white;
+
+}
