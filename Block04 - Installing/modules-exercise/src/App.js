@@ -22,7 +22,7 @@ function App() {
       <h1> i'd like one {fruit}, please </h1>
       <h5> i'd like one {choice(fruits)}, please </h5>
       <h1> May I have another fruit? </h1>
-      <h1> Removed = {remain} </h1>
+      <h1> we have {remain} fruits left. </h1>
 
     </div>
   );
