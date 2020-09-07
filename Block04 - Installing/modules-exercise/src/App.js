@@ -8,8 +8,8 @@ function App() {
   
   const fruit = choice(fruits);
   console.log(fruit);
+  const remain = remove(fruits, fruit);
 
-  
 
   return (
     <div className="App">
@@ -21,8 +21,8 @@ function App() {
       </header>
       <h1> i'd like one {fruit}, please </h1>
       <h5> i'd like one {choice(fruits)}, please </h5>
-
-
+      <h1> May I have another fruit? </h1>
+      <h1> Removed = {remain} </h1>
 
     </div>
   );
