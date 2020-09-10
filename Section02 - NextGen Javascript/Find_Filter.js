@@ -69,3 +69,19 @@ const remain = (items, item) => {
 };
 
 remain(num, 4);
+
+/************* */
+// FILTER FUNCTION
+/************* */
+
+// Keep only older than 20 years, or remove lower than 20.
+const ages = [23, 21, 17, 30];
+
+//const adults = ages.filter(function (year) {
+//    return year > 20;
+//});
+
+const adults = ages.filter( year => year > 20 );
+console.log(ages);
+console.log(adults);
+
