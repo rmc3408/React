@@ -1,17 +1,19 @@
 
-// Spread more data into arrays
-const nums = [1, 2, 3];
+// Spread INDIVIDUAL ELEMENTS data into arrays, not the whole array
+const nums = [ 1, 2, 3 ];
+const nums2 = [5, 6, 7];
 
 //array inside array. 
 const newNums1 = [nums, 4];
 console.log(newNums1);
 
-//merge array elements.
-const newNums2 = [...nums, 4, 5];
+//merge individuals array elements.
+const newNums2 = [...nums, 4];
 console.log(newNums2);
 
-
-
+//combine arrays.
+const plusNums = [...nums, 4, ...nums2];
+console.log(plusNums);
 
 // Spread into Objects
 const person = {

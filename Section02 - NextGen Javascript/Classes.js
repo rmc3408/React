@@ -1,15 +1,17 @@
-class Animal{
-    /* 
-        OLD Syntax : ES6
+function 
 
-    constructor{
+
+class Animal {
+    /* OLD Syntax : ES5
+    constructor
+    {
     this.name = 'old specie'; 
     }
-
     function makeSound() {
         console.log("GRR");
     }*/
     
+    //NEW : ES6
     name = 'specie'; //hidden constructor
     makeSound = () => { console.log(this.name); }
 
@@ -20,7 +22,9 @@ a1.makeSound();
 
 
 class Human {
-        sound = "noise";
+    sound = 'voice';
+    name = name;
+
     printSound = () => {
         console.log(this.sound);
     }
@@ -35,7 +39,7 @@ const p1 = new Person();
 p1.printName();
 p1.printSound();
 
-/*   OLD VERSION : ES6
+/*   OLD VERSION : ES5
   
 class Human {
 
