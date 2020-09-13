@@ -1,17 +1,28 @@
-import React from 'react';
+/* eslint-disable react/no-multi-comp */
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Title from './Components/Title';
+import List from './Components/List';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p> The Complete React Js and Redux Course - Build Modern Web Apps
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p> The Complete React Js and Redux Course - Build Modern Web Apps
          by Rayan Slim & Rob Percival </p>
-      </header>
-    </div>
-  );
-}
+        </header>
+        <Title name={'Inside duties'} />
+        <List tasks={['dust home', 'clean dishes']} />
 
+        <Title name={'Outside duties'} />
+        <List tasks={['dust car', 'clean garden']} />
+
+
+      </div>
+    );
+  }
+}
 export default App;
