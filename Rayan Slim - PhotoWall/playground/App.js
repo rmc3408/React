@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Title from './Components/Title';
+import List from './Components/List';
 
 class App extends Component {
   render() {
@@ -11,7 +13,12 @@ class App extends Component {
           <p> The Complete React Js and Redux Course - Build Modern Web Apps
          by Rayan Slim & Rob Percival </p>
         </header>
-        
+        <Title name={'Inside duties'} />
+        <List tasks={['dust home', 'clean dishes']} />
+
+        <Title name={'Outside duties'} />
+        <List tasks={['dust car', 'clean garden']} />
+
 
       </div>
     );
