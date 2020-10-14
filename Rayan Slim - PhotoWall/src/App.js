@@ -8,8 +8,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p> The Complete React Js and Redux Course - Build Modern Web Apps
-         by Rayan Slim & Rob Percival </p>
+          <p> Daily To Do List Application - Build Modern Web Apps
+         by Raphael Molinaro & Luana Cesar </p>
         </header>
         
 
