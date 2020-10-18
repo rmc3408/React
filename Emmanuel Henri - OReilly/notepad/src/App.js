@@ -71,6 +71,7 @@ class App extends Component {
     });
 
   }
+  
   deleteNote(id) {
     firebase.database()
       .ref(`/notes/${id}`)
