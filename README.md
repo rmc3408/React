@@ -1,6 +1,11 @@
 <a href="https://reactjs.org/docs/getting-started.html"/><img src="https://miro.medium.com/max/3600/1*HSisLuifMO6KbLfPOKtLow.jpeg"></a>
 # React
 
+### <u>Rayan Slim directory </u>
+__O'Reilly - The Complete React Js and Redux Course - Build Modern Web Apps__<br>
+Course: (https://learning.oreilly.com/videos/the-complete-react/9781789950656) <br>
+Course length: <b>8 hours</b>
+
 ### <u>Block directory </u>
 __Udemy: The Modern React Bootcamp by Colt Steele__<br>
 Course: (https://www.udemy.com/modern-react-bootcamp/) <br>
