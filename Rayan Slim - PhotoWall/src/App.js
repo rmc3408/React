@@ -8,8 +8,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p> Daily To Do List Application - Build Modern Web Apps
-         by Raphael Molinaro & Luana Cesar </p>
+          <p> PhotoWall created by Raphael Molinaro </p>
         </header>
         
 
