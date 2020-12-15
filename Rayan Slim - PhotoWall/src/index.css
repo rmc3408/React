@@ -59,6 +59,10 @@ h2 {
 .plusIcon{
   display:block;
   margin: 0 auto 50px auto;
+  padding-bottom: 0px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.5;
   height: 100px;
   width: 100px;
   border-radius: 50%;

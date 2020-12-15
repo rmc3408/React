@@ -1,3 +1,4 @@
+import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import Title from './Title';
 import PhotoWall from './Photowall';
@@ -27,10 +28,10 @@ class App extends Component {
           description: "On a vacation!",
           imageLink: "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/08/24/104670887-VacationExplainsTHUMBWEB.1910x1000.jpg"
         }],
-      screen: 'Photo' //change screen based on this property = Photo OR AddPhoto
+      
     };
     this.removePhoto = this.removePhoto.bind(this);
-    this.navigate = this.navigate.bind(this);
+    
   }
   componentDidMount() {
     console.log('DidMount component');
@@ -42,32 +43,26 @@ class App extends Component {
       posts: state.posts.filter(p => p !== postRemoved)
     }));
   } 
-  navigate() {
-    this.setState({
-      screen: 'AddPhoto'
-
-    });
-  }
+  
 
   render() {
     console.log('render');
-    
     return (   
       <div> 
 
-          {this.state.screen === 'Photo' && (
-            <div>
+        <Route
+          exact path="/" render={() =>
+          (<div>
               <Title title={'PhotoWall'} />
-              <PhotoWall posteds={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate} />
-            </div >
-          )}
-
-          {this.state.screen === 'AddPhoto' && (
-              <div>
-                <AddPhoto />
-              </div >
-          )}
-
+            <PhotoWall
+              posteds={this.state.posts} onRemovePhoto={this.removePhoto}
+              onNavigate={this.navigate}
+            />
+          </div>)}
+        />
+        
+        <Route exact path="/AddPhoto" component={AddPhoto} />
+              
       </div>
     );
   }
