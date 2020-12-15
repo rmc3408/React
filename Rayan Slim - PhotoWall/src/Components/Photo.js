@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Photo(props) {
     const thePost = props.posted;
@@ -16,4 +17,10 @@ function Photo(props) {
                 
         </figure>);
 }
+
+Photo.PropType = {
+    thePost: PropTypes.object.isRequired,
+    onRemovePhoto: PropTypes.func.isRequired
+};
+
 export default Photo;
