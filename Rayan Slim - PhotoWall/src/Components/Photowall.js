@@ -3,9 +3,13 @@ import React from 'react';
 import Photo from './Photo';
 
 function Photowall(props) {
-      return (
+    return (
+        <div>
+        <button className="plusIcon" onClick={props.onNavigate} > + </button>
         <div className="photogrid">
-            {props.posteds.map((post, index) => <Photo posted={post} key={index} onRemovePhoto={props.onRemovePhoto} />)}
+              {props.posteds.map((post, index) =>
+                  <Photo posted={post} key={index} onRemovePhoto={props.onRemovePhoto} />)}
+            </div>
         </div>
     );
 }
