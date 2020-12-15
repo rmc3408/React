@@ -16,7 +16,7 @@ __Udemy: The Complete React Native + Hooks Course by Stephen Grinder__<br>
 Course: (https://www.udemy.com/course/the-complete-react-native-and-redux-course/) <br>
 Course length: <b>38 hours</b>
 
-### <u>Block directory </u>
+### <u>Section directory </u>
 __Udemy: React - The Complete Guide (incl Hooks, React Router, Redux) by Maximilian Schwarzmuller__<br>
 Course: (https://www.udemy.com/course/react-the-complete-guide-incl-redux/) <br>
 Course length: <b>40 hours</b>
