@@ -11,7 +11,14 @@ class AddPhoto extends Component {
         event.preventDefault();
         const nameLink = event.target.elements.imageLink.value;
         const nameDescription = event.target.elements.description.value;
-        console.log(nameLink + " " + nameDescription);
+        const post = {
+            id: Number(1 / new Date()),
+            description: nameDescription,
+            imageLink: nameLink
+        };
+        if (nameDescription && nameLink !== null) {
+            this.props.onAddPhoto(post);
+        }
     }
     render() {
         return (<div>
