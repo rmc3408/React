@@ -31,10 +31,17 @@ class App extends Component {
       
     };
     this.removePhoto = this.removePhoto.bind(this);
+    this.addPhotoUpdate = this.addPhotoUpdate.bind(this);
     
   }
   componentDidMount() {
     console.log('DidMount component');
+  }
+
+  addPhotoUpdate(postUpdated) {
+    this.setState(state => {
+      posts: state.posts.concat([postUpdated])
+    });
   }
 
   removePhoto(postRemoved) {

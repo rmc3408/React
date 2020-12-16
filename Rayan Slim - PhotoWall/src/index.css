@@ -55,6 +55,12 @@ h2 {
   border-radius: 5px;
   padding: 10px;
 }
+.btn:hover{
+  background-color: #d3d3d3;
+  border: 1px solid #969494;
+  cursor: pointer;
+
+}
 
 .plusIcon{
   display:block;
@@ -70,5 +76,26 @@ h2 {
   font-size: 4rem;
   background-color: black;
   color: aliceblue;
+}
+
+.forma{
+  background-color: white;
+  max-width: 40%;
+  margin: 0 auto;
+  padding: 45px;
+  text-align: center;
+
+
+
+}
+.forma input{
+  background-color: lightgray;
+  width: 100%;
+  border: none;
+  font-size: 1rem;
+  padding: 18px;
+  box-sizing: border-box;
+  margin: 0 0 15px 0;
+  cursor: pointer;
 }
 
