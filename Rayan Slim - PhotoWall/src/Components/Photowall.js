@@ -21,7 +21,7 @@ function Photowall(props) {
 //Validation process
 Photowall.propTypes = {
     posts: PropType.array.isRequired,
-    onRemovePhoto: PropType.func.isRequired
+    // onRemovePhoto: PropType.func.isRequired
 };
 
 export default Photowall;
