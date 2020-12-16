@@ -9,7 +9,9 @@ function Photowall(props) {
         <div>
         <Link className="plusIcon" to="/AddPhoto"> + </Link>
         <div className="photogrid">
-              {props.posteds.map((post, index) =>
+                {props.posteds
+                    .sort((a, b) => { return a.id - b.id;})
+                    .map((post, index) =>
                   <Photo posted={post} key={index} onRemovePhoto={props.onRemovePhoto} />)}
             </div>
         </div>
