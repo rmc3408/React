@@ -7,7 +7,7 @@ const postReducer = function posts(state = PostData, action) {
         case 'REMOVER':
             return [...state.slice(0, action.index), ...state.slice(action.index + 1)];
         case 'ADD':
-            return 1
+            return [...state, action.post];
         default:
             return state;
     }

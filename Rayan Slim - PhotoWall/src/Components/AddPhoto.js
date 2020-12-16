@@ -12,18 +12,19 @@ class AddPhoto extends Component {
         const nameLink = event.target.elements.imageLink.value;
         const nameDescription = event.target.elements.description.value;
         const post = {
-            id: 1 / Number(new Date()),
+            id: Number(new Date()),
             description: nameDescription,
             imageLink: nameLink
         };
-        if (nameDescription && nameLink !== null) {
-            this.props.onAddPhoto(post);
+        if (nameDescription && nameLink) {
+            this.props.addPost(post);
+            this.props.onHistory.push('/');
+        
         }
     }
     render() {
         return (<div>
-            <h2> PhotoWall </h2>
-           
+                   
             <div className="forma">
                 <h5> Upload your picture</h5>
                 <form onSubmit={this.handleSubmittion} >

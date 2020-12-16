@@ -6,11 +6,16 @@ body {
 }
 h2 {
   font-family: 'Langar';
-  font-size: 13rem;
+  font-size: 10rem;
   text-align: center;
   font-weight: 300;
   margin: 2rem 0;
 }
+h2 a{
+  text-decoration: none;
+  color: black;
+}
+
 
 @font-face{
   font-family: 'Langar';
