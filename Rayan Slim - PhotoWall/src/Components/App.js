@@ -1,11 +1,10 @@
 import { Route } from 'react-router-dom';
 import React, { Component } from 'react';
 import Title from './Title';
-//import PhotoWall from './Photowall';
+import PhotoWall from './Photowall';
 import './App.css';
-import Photowall from './Photowall';
 //import AddPhoto from './AddPhoto';
-
+//import { removePost } from '../Redux/actions';
 
 class App extends Component {
   constructor() {
@@ -33,30 +32,30 @@ class App extends Component {
     // };
     // this.removePhoto = this.removePhoto.bind(this);
     // this.addPhotoUpdate = this.addPhotoUpdate.bind(this);
-    
   }
-  // componentDidMount() {
-  //   console.log('DidMount component');
-  // }
+  componentDidMount() {
+    //this.props.dispatch(removePost(1)); IF dont bind Actions to 
+    //this.props.removePost(1);
+    console.log('App DidMount component');
+  }
 
   // addPhotoUpdate(postUpdated) {
   //   this.setState(state => ({
   //     posts: state.posts.concat([postUpdated])
   //   }));
   // }
-
-  // removePhoto(postRemoved) {
+// removePhoto(postRemoved) {
   //   console.log(postRemoved.description);
   //   this.setState(state => ({
   //     posts: state.posts.filter(p => p !== postRemoved)
   //   }));
-  // } 
+  // }
   
 
   render() {
     console.log('render');
     // console.log(this.state.posts); //without redux
-    console.log(this.props.posts);
+    console.log(this.props);
 
     return (   
       <div> 
@@ -65,7 +64,8 @@ class App extends Component {
           exact path="/" render={() =>
           (<div>
             <Title title={'PhotoWall'} />
-            <Photowall posteds={this.props.posts} />
+            <PhotoWall {...this.props} />
+            {/* <PhotoWall posteds={this.props.posts} /> */}
             {/* <PhotoWall
               posteds={this.state.posts} onRemovePhoto={this.removePhoto}
               onNavigate={this.navigate}
@@ -75,18 +75,14 @@ class App extends Component {
         
         {/*<Route exact path="/AddPhoto" component={AddPhoto} />*/}
 
-        {/* <Route
-          path="/AddPhoto"
-          render={({ history }) =>
-            <AddPhoto
-              onAddPhoto={(postAdded) => {
+        <Route path="/AddPhoto" render={({ history }) =>
+            <AddPhoto onAddPhoto={(postAdded) => {
                 console.log(postAdded);
-                this.addPhotoUpdate(postAdded);
                 history.push('/');
               }}
             />
         }
-        /> */}
+        />
               
       </div>
     );
