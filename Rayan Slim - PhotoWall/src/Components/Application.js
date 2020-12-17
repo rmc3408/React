@@ -8,7 +8,10 @@ import App from './App';
 
 
 function mapStateToProps(state) {
-    return { posts: state };
+    return {
+        posts: state.posts, //name of function must match.
+        comments: state.comments
+    };
 }
 
 function mapDispatchToProps(dispatch) {

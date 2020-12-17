@@ -24,3 +24,10 @@ export function addPost(post) {
         post
     };
 }
+
+export function addComment(com) {
+    return {
+        type: 'ADD_COMMENT',
+        comment: com
+    };
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Photo from './Photo';
-//import Comments from './Comments';
+import Comments from './Comments';
 
 class Single extends Component {
     render() {
@@ -10,39 +10,18 @@ class Single extends Component {
         console.log(match);
         console.log(posts);
         console.log(id);
-        const post = posts.find((post) => post.id === id);
+        const post = posts.find(p => p.id === id);
         console.log(post);
+
+        const commentS = this.props.comments;
+
         return (
             <div className="single-photo">
                 <Photo posted={post} />
+                <Comments addComment={this.props.addComment} comments={commentS} />
                 
             </div>
         );
-        
-        
-        
-        //const comments = this.props.comments[match.params.id] || [];
-        //const index = this.props.posts.findIndex((post) => post.id === id)
-        // console.log(post)
-        // if (this.props.loading === true) {
-        //     return (
-        //         <div className="loader">
-        //             ....loading
-        //         </div>
-        //     )
-        // } else if (post) {
-        //     return (
-        //         <div className='single-photo'>
-        //             {/* components are reusable so pass in Photo */}
-        //             <Photo post={post} {...this.props} index={index}/>
-        //             <Comments startAddingComment={this.props.startAddingComment} comments={comments} id={id}/>
-        //         </div>
-        //     )
-        // } else {
-        //     return <h1>...no post found</h1>
-        // }
-        }
     }
-
-
+}
 export default Single;
