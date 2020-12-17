@@ -16,10 +16,9 @@ class AddPhoto extends Component {
             description: nameDescription,
             imageLink: nameLink
         };
-        if (nameDescription && nameLink) {
+        if (nameDescription && nameLink !== null) {
             this.props.addPost(post);
             this.props.onHistory.push('/');
-        
         }
     }
     render() {
