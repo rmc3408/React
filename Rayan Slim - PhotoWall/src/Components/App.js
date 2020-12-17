@@ -33,11 +33,11 @@ class App extends Component {
     // this.removePhoto = this.removePhoto.bind(this);
     // this.addPhotoUpdate = this.addPhotoUpdate.bind(this);
   }
-  componentDidMount() {
-    //this.props.dispatch(removePost(1)); IF dont bind Actions to 
-    //this.props.removePost(1);
-    console.log('App DidMount component');
-  }
+  // componentDidMount() {
+  //   //this.props.dispatch(removePost(1)); IF dont bind Actions to 
+  //   //this.props.removePost(1);
+  //   console.log('App DidMount component');
+  // }
 
   // addPhotoUpdate(postUpdated) {
   //   this.setState(state => ({

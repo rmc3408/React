@@ -18,9 +18,9 @@ export function removePost(index) {
 //     posts: state.posts.concat([postUpdated])
 //   }));
 // }
-export function addPost(post) {
+export function addPost(thePost) {
     return {
         type: 'ADD',
-        post
+        post : thePost
     };
 }

@@ -8,7 +8,7 @@ import './index.css';
 import Application from './Components/Application';
 
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(rootReducer);
 
 ReactDOM.render(<Provider store={store}><BrowserRouter><Application /></BrowserRouter></Provider>,
     document.getElementById('root'));
