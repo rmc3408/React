@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import Photo from './Photo';
+import Photo from './Photo';
 //import Comments from './Comments';
 
 class Single extends Component {
@@ -11,9 +11,10 @@ class Single extends Component {
         console.log(posts);
         console.log(id);
         const post = posts.find((post) => post.id === id);
+        console.log(post);
         return (
             <div className="single-photo">
-                ....loading
+                <Photo posted={post} />
                 
             </div>
         );
