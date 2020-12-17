@@ -17,7 +17,9 @@ class AddPhoto extends Component {
             imageLink: nameLink
         };
         if (nameDescription && nameLink !== null) {
-            this.props.addPost(post);
+            //this.props.addPost(post); //local database
+            this.props.startAddingPost(post); //online firebase database
+
             this.props.onHistory.push('/');
         }
     }
