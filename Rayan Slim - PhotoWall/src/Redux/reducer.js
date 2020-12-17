@@ -1,20 +1,28 @@
 import { combineReducers } from 'redux';
 import PostData from '../data/posts';
 
-function comments(state = [], action) {
-    console.log('COMMENT reducer activated');
-
+function comments(state = {}, action) {
+    //console.log('COMMENT reducer activated');
     switch (action.type) {
         case 'ADD_COMMENT':
-            return [...state, action.comment];
+        if (!state[action.postId]) { // if there is no value
+            return { ...state, [action.postId]: [action.comment] };
+            // specify id as property of an object using []. action.postId is not an array. action.comment is an array!
+        }
+        else
+        {
+            return { ...state, [action.postId]: [...state[action.postId], action.comment] };
+        }
+        case 'LOAD_COMMENTS':
+            return action.comments;
         default:
             return state;
     }
 }
 
 function posts(state = PostData, action) {
-    console.log(action.index);
-    console.log('POST reducer activated');
+    //console.log(action.index);
+    //console.log('POST reducer activated');
 
     switch (action.type) {
         case 'REMOVER':

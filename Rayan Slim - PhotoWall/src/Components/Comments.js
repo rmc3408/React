@@ -10,12 +10,12 @@ class Comments extends Component {
         event.preventDefault();
         //console.log(event.target.elements.comment.value);
         const comment = event.target.elements.comment.value;
-        this.props.addComment(comment); // call the addComment method from the props that are passed dwn 
-        
+        this.props.addComment(comment, this.props.id); // call the addComment method from the props
+        event.target.elements.comment.value = null;
     }
 
     render() {
-        //console.log(this.props.comments);
+        console.log(this.props.comments);
         return (
             <div className="comment">
                 {this.props.comments

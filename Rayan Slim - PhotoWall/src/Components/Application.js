@@ -1,4 +1,3 @@
-//import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
