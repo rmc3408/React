@@ -12,11 +12,13 @@ class App extends Component {
     console.log('App constructor loaded');    
   }
 
-// componentDidMount() {
-    //   //this.props.dispatch(removePost(1)); IF dont bind Actions to 
-    //   //this.props.removePost(1);
-    //   console.log('App DidMount component');
-    // }
+   componentDidMount() {
+       //this.props.dispatch(removePost(1)); IF dont bind Actions to 
+       //this.props.removePost(1);
+       //console.log('App DidMount component');
+     this.props.startLoadingPost();
+     this.props.startLoadingComments();
+   }
 
     // addPhotoUpdate(postUpdated) {
     //   this.setState(state => ({

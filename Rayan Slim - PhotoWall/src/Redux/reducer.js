@@ -29,6 +29,8 @@ function posts(state = PostData, action) {
             return [...state.slice(0, action.index), ...state.slice(action.index + 1)];
         case 'ADD':
             return [...state, action.post];
+        case 'LOAD_POST':
+            return action.posts;
         default:
             return state;
     }

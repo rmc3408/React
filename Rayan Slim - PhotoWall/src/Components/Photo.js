@@ -13,7 +13,8 @@ function Photo(props) {
             <div className="btn-container">
                 <button
                     className="btn" onClick={() => { 
-                        props.removePost(props.index);
+                        //props.removePost(props.index);
+                        props.startRemovingPost(props.index, thePost.id);
                         props.history.push('/');
                     }}
                 > Remove </button>
