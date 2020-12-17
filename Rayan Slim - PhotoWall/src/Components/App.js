@@ -1,6 +1,5 @@
 import { Route, Link } from 'react-router-dom';
 import React, { Component } from 'react';
-//import Title from './Title';
 import PhotoWall from './Photowall';
 import './App.css';
 import AddPhoto from './AddPhoto';
@@ -56,7 +55,7 @@ class App extends Component {
     console.log('render');
     // console.log(this.state.posts); //without redux
     console.log(this.props);
-
+    console.warn = () => {}
     return (   
       <div> 
         <h2> <Link to='/' >PhotoWall</Link> </h2>
