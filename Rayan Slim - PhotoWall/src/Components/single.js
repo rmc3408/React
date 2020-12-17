@@ -1,0 +1,47 @@
+import React, {Component} from 'react';
+//import Photo from './Photo';
+//import Comments from './Comments';
+
+class Single extends Component {
+    render() {
+        const { match, posts } = this.props;
+        // turn id into number to perform boolean check on the same type
+        const id = Number(match.params.id);
+        console.log(match);
+        console.log(posts);
+        console.log(id);
+        const post = posts.find((post) => post.id === id);
+        return (
+            <div className="single-photo">
+                ....loading
+                
+            </div>
+        );
+        
+        
+        
+        //const comments = this.props.comments[match.params.id] || [];
+        //const index = this.props.posts.findIndex((post) => post.id === id)
+        // console.log(post)
+        // if (this.props.loading === true) {
+        //     return (
+        //         <div className="loader">
+        //             ....loading
+        //         </div>
+        //     )
+        // } else if (post) {
+        //     return (
+        //         <div className='single-photo'>
+        //             {/* components are reusable so pass in Photo */}
+        //             <Photo post={post} {...this.props} index={index}/>
+        //             <Comments startAddingComment={this.props.startAddingComment} comments={comments} id={id}/>
+        //         </div>
+        //     )
+        // } else {
+        //     return <h1>...no post found</h1>
+        // }
+        }
+    }
+
+
+export default Single;

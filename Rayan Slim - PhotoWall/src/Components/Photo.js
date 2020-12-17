@@ -6,7 +6,7 @@ function Photo(props) {
     const thePost = props.posted;
     return (
         <figure className="figure">
-            <Link to={'/Single'}>
+            <Link to={`/single/${thePost.id}`}>
                 <img className="photounique" src={thePost.imageLink} alt={thePost.description} />
             </Link>
             <figcaption> <p> {thePost.description} </p>  </figcaption>

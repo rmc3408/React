@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import PhotoWall from './Photowall';
 import './App.css';
 import AddPhoto from './AddPhoto';
-import Single from './single';
 //import { removePost } from '../Redux/actions';
+import Single from './Single';
 
 class App extends Component {
   constructor() {
@@ -53,10 +53,10 @@ class App extends Component {
   
 
   render() {
-    console.log('render');
+    //console.log('render');
     // console.log(this.state.posts); //without redux
-    console.log(this.props);
-    console.warn = () => { };
+    //console.log(this.props);
+    console.warn = () => { }; //remove warning from lifecycle components
     return (   
       <div> 
         <h2> <Link to='/' >PhotoWall</Link> </h2>
@@ -66,19 +66,16 @@ class App extends Component {
             
             <PhotoWall {...this.props} />
             {/* <PhotoWall posteds={this.props.posts} /> */}
-            {/* <PhotoWall
-              posteds={this.state.posts} onRemovePhoto={this.removePhoto}
-              onNavigate={this.navigate}
-            /> */}
+            {/* <PhotoWall posteds={this.state.posts} onRemovePhoto={this.removePhoto}
+              onNavigate={this.navigate} /> */}
           </div>)}
         />
         
         {/*<Route exact path="/AddPhoto" component={AddPhoto} />*/}
-
         <Route path="/AddPhoto" render={({history}) => (<AddPhoto {...this.props} onHistory={history} />)} />
-        <Route path='/single/:id' render={(params) => (
-          <Single {...this.props} {...params} />
-        )} />      
+
+        <Route path="/single/:id" render={(params) => <Single {...this.props} {...params} />} />
+        
       </div>
     );
   }

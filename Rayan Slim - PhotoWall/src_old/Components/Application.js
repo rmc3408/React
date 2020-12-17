@@ -2,7 +2,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
-import * as anyAction from '../redux/actions';
+import * as anyAction from '../Redux/actions';
 //import { removePost } from '../Redux/actions';
 import App from './App';
 
