@@ -1,31 +1,30 @@
 import { database } from "../database/config";
 
-export function startAddingPost(post) {
+export function startLoadingPost() {
   return (dispatch) => {
     return database
-      .ref("posts")
-      .update({ [post.id]: post })
-      .then(() => {
-        dispatch(addPost(post)).catch((error) => {
-          console.log(error);
+      .ref('posts')
+      .once('value')
+      .then((snapshot) => {
+        let posts = [];
+        snapshot.forEach((childSnapshot) => {
+          posts.push(childSnapshot.val());
         });
+        dispatch(loadPosts(posts));
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 }
 
-export function startLoadingPost() {  
-    	 return (dispatch) => {  
-    	 return database.ref('posts').once('value').then((snapshot) => {  
-    	 let posts = []  
-    	 snapshot.forEach((childSnapshot) => {  
-    	 posts.push(childSnapshot.val())  
-    	 })  
-             dispatch(loadPosts(posts))
-         })
-             .catch((error) => { console.log(error) })  
-    }
-}  
-    
+export function loadPosts(posts) {
+  return {
+    type: 'LOAD_POSTS',
+    posts,
+  };
+}
+
 export function startRemovingPost(index, id) {
   return (dispatch) => {
     return database
@@ -39,6 +38,20 @@ export function startRemovingPost(index, id) {
       });
   };
 }
+export function startAddingPost(post) {
+  return (dispatch) => {
+    return database
+      .ref('posts')
+      .update({ [post.id]: post })
+      .then(() => {
+        dispatch(addPost(post));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+}   
+  
 export function startAddingComment(comment, postId) {
   return (dispatch) => {
     return database
@@ -55,23 +68,22 @@ export function startAddingComment(comment, postId) {
 export function startLoadingComments() {
   return (dispatch) => {
     return database
-      .ref('comments')
-      .once('value')
+      .ref("comments")
+      .once("value")
       .then((snapshot) => {
         let comments = {};
         snapshot.forEach((childSnapshot) => {
           comments[childSnapshot.key] = Object.values(childSnapshot.val());
         });
-          dispatch(loadComments(comments)).catch((error) => {
-            console.log(error);
+        dispatch(loadComments(comments));
       });
   };
 }
 
-export function loadPosts(posts) {
+export function removePost(index) {
   return {
-    type: 'LOAD_POSTS',
-    posts
+    type: "REMOVER",
+    index, // or just index: theIndex
   };
 }
 
@@ -82,13 +94,6 @@ export function loadPosts(posts) {
 //     posts: state.posts.filter(p => p !== postRemoved)
 //   }));
 
-export function removePost(index) {
-  return {
-    type: 'REMOVER',
-    index // or just index: theIndex
-  };
-}
-
 //adding post
 // addPhotoUpdate(postUpdated) {
 //   this.setState(state => ({
@@ -97,21 +102,21 @@ export function removePost(index) {
 // }
 export function addPost(post) {
   return {
-    type: 'ADD',
-    post
+    type: "ADD",
+    post,
   };
 }
 
 export function addComment(com, id) {
   return {
-    type: 'ADD_COMMENT',
+    type: "ADD_COMMENT",
     comment: com,
-    postId: id
+    postId: id,
   };
 }
 export function loadComments(comments) {
   return {
-    type: 'LOAD_COMMENTS',
-    comments
+    type: "LOAD_COMMENTS",
+    comments,
   };
 }
