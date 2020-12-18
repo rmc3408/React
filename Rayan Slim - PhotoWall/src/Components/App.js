@@ -55,7 +55,9 @@ class App extends Component {
         
         {/*<Route exact path="/AddPhoto" component={AddPhoto} />*/}
 
-        <Route path="/AddPhoto" render={({history}) => (<AddPhoto {...this.props} onHistory={history} />)} />
+        <Route
+          path="/AddPhoto"
+          render={({ history }) => (<AddPhoto {...this.props} onHistory={history} />)} />
         <Route
           path='/single/:id' render={(params) => (
           <Single {...this.props} {...params} />
