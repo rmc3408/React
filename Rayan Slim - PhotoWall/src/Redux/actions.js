@@ -1,4 +1,4 @@
-import { database } from "../database/config";
+import { database } from '../database/config';
 
 export function startLoadingPost() {
   return (dispatch) => {
@@ -68,8 +68,8 @@ export function startAddingComment(comment, postId) {
 export function startLoadingComments() {
   return (dispatch) => {
     return database
-      .ref("comments")
-      .once("value")
+      .ref('comments')
+      .once('value')
       .then((snapshot) => {
         let comments = {};
         snapshot.forEach((childSnapshot) => {
@@ -82,7 +82,7 @@ export function startLoadingComments() {
 
 export function removePost(index) {
   return {
-    type: "REMOVER",
+    type: 'REMOVER',
     index, // or just index: theIndex
   };
 }
@@ -102,21 +102,21 @@ export function removePost(index) {
 // }
 export function addPost(post) {
   return {
-    type: "ADD",
+    type: 'ADD',
     post,
   };
 }
 
 export function addComment(com, id) {
   return {
-    type: "ADD_COMMENT",
+    type: 'ADD_COMMENT',
     comment: com,
     postId: id,
   };
 }
 export function loadComments(comments) {
   return {
-    type: "LOAD_COMMENTS",
+    type: 'LOAD_COMMENTS',
     comments,
   };
 }
