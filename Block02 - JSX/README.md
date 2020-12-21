@@ -44,8 +44,7 @@ Section 32: Introducing React Hooks <br>
 Section 33: React Hooks Project <br>
 Section 34: Introducing The Context API! <br>
 Section 35: Using Context with Hooks <br>
-Section 36: State Management w/ useReducer &
-useContext <br>
+Section 36: State Management w/ useReducer & useContext <br>
 Section 37: Next JS <br>
 Section 38: Next: Fetching & Server API <br>
 Section 39: Bonus: Webpack Mini Course - Your Own
