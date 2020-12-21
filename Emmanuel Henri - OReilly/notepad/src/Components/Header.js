@@ -7,8 +7,7 @@ const Header = (props) => {
     <div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h2 className="App-title">Notepad Application </h2>
-        <p> Building a React App from Scratch by Emmanuel Henri - O'Reilly</p>
+        <h2 className="App-title"> Note Application </h2>
       </header>
       <nav className="navbar-fixed teal lighten-2">
         <div className="teal lighten-2">

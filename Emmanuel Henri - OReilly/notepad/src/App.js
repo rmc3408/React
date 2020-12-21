@@ -23,23 +23,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notes: [
-        {/*{
-          id: 1,
-          title: "Add course notes",
-          details: "Add your first task",
-        },
-        {
-          id: 2,
-          title: "Add first Task",
-          details: "What need to do first",
-        },
-        {
-          id: 3,
-          title: "Add your next payment",
-          details: "Company - Price",
-        },*/}
-      ],
+      notes: [],
       name: "Ivan",
       age: 45,
       currentTitle: '',
@@ -128,12 +112,7 @@ class App extends Component {
 
         <Grid notes={this.state.notes} deleteNote={this.deleteNote.bind(this)} />
 
-        {/* <div>
-          <p > Variable USER using Objects outside Class = {owner.name} </p>
-          <Intro user={owner} />
-          <p> Variable USER using State, object of the App Class {this.state.name}</p>
-          <Intro user={this.state} />
-        </div>*/}
+        
       </div>
     );
   }

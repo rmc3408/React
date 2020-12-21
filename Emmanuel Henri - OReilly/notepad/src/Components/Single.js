@@ -14,7 +14,7 @@ const Single = (props) => {
                     <a onClick={() => {
                         props.deleteNote(props.note.id)
                     }
-                     }>delete </a>
+                     }>Delete </a>
                 </div>
             </div>
         </li>
