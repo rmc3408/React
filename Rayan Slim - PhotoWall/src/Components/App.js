@@ -4,7 +4,7 @@ import PhotoWall from './Photowall';
 import './App.css';
 import AddPhoto from './AddPhoto';
 import Single from './single';
-//import { removePost } from '../Redux/actions';
+
 
 class App extends Component {
   constructor() {
@@ -15,7 +15,7 @@ class App extends Component {
    componentDidMount() {
        //this.props.dispatch(removePost(1)); IF dont bind Actions to 
        //this.props.removePost(1);
-       //console.log('App DidMount component');
+     console.log('App DidMount component - database methods');
      this.props.startLoadingPost();
      this.props.startLoadingComments();
    }
@@ -40,28 +40,16 @@ class App extends Component {
     return (   
       <div> 
         <h2> <Link to='/' >PhotoWall</Link> </h2>
-        <Route
-          exact path="/" render={() =>
-          (<div>
-            
-            <PhotoWall {...this.props} />
-            {/* <PhotoWall posteds={this.props.posts} /> */}
-            {/* <PhotoWall
-              posteds={this.state.posts} onRemovePhoto={this.removePhoto}
-              onNavigate={this.navigate}
-            /> */}
-          </div>)}
-        />
         
-        {/*<Route exact path="/AddPhoto" component={AddPhoto} />*/}
-
         <Route
-          path="/AddPhoto"
-          render={({ history }) => (<AddPhoto {...this.props} onHistory={history} />)} />
+          exact path="/" render={() => <div> <PhotoWall {...this.props} /> </div>} />
+        
         <Route
-          path='/single/:id' render={(params) => (
-          <Single {...this.props} {...params} />
-        )} />      
+          path="/AddPhoto" render={({ history }) => <AddPhoto {...this.props} onHistory={history} />} />
+        
+        <Route 
+          path='/single/:id' render={(params) => <Single {...this.props} {...params} />} />  
+        
       </div>
     );
   }

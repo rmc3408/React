@@ -1,4 +1,7 @@
-import firebase from 'firebase'; //ATTENTION, AFter version 8.0 no need * as firebase
+import firebase from 'firebase/app';
+import 'firebase/database'; // If using Firebase database
+
+//import firebase from 'firebase'; //ATTENTION, AFter version 8.0 no need * as firebase
 
 var firebaseConfig = {
     apiKey: "AIzaSyCX7sBEuXfoyvB0l8rTp8VM7XYQTQWQX7Y",

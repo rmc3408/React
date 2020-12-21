@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import Photo from './Photo';
 
-
 function Photowall(props) {
     return (
         <div>
@@ -20,8 +19,7 @@ function Photowall(props) {
 
 //Validation process
 Photowall.propTypes = {
-    posts: PropType.array.isRequired,
-    // onRemovePhoto: PropType.func.isRequired
+    posts: PropType.array.isRequired
 };
 
 export default Photowall;

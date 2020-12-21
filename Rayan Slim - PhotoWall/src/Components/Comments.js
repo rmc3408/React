@@ -8,10 +8,8 @@ class Comments extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        //console.log(event.target.elements.comment.value);
         const comment = event.target.elements.comment.value;
         this.props.startAddingComment(comment, this.props.id);
-        //this.props.addComment(comment, this.props.id); // call the addComment method from the props
         event.target.elements.comment.value = null;
     }
 

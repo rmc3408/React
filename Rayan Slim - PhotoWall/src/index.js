@@ -1,6 +1,5 @@
 import { Provider } from 'react-redux';
 import Thunk from 'redux-thunk';
-//import { database } from './database/config';
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';

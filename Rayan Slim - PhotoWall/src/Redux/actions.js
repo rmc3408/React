@@ -1,5 +1,13 @@
 import { database } from '../database/config';
 
+
+export function loadPosts(posts) {
+  return {
+    type: 'LOAD_POST',
+    posts,
+  };
+}
+
 export function startLoadingPost() {
   return (dispatch) => {
     return database
@@ -11,17 +19,15 @@ export function startLoadingPost() {
           posts.push(childSnapshot.val());
         });
         dispatch(loadPosts(posts));
-      })
-      .catch((error) => {
-        console.log(error);
       });
+      
   };
 }
 
-export function loadPosts(posts) {
+export function removePost(index) {
   return {
-    type: 'LOAD_POSTS',
-    posts,
+    type: 'REMOVER',
+    index, // or just index: theIndex
   };
 }
 
@@ -38,6 +44,15 @@ export function startRemovingPost(index, id) {
       });
   };
 }
+
+
+export function addPost(post) {
+  return {
+    type: 'ADD',
+    post,
+  };
+}
+
 export function startAddingPost(post) {
   return (dispatch) => {
     return database
@@ -45,13 +60,19 @@ export function startAddingPost(post) {
       .update({ [post.id]: post })
       .then(() => {
         dispatch(addPost(post));
-      })
-      .catch((error) => {
-        console.log(error);
       });
+      
   };
 }   
-  
+
+export function addComment(com, id) {
+  return {
+    type: 'ADD_COMMENT',
+    comment: com,
+    postId: id,
+  };
+}
+
 export function startAddingComment(comment, postId) {
   return (dispatch) => {
     return database
@@ -65,6 +86,14 @@ export function startAddingComment(comment, postId) {
       });
   };
 }
+
+export function loadComments(comments) {
+  return {
+    type: 'LOAD_COMMENTS',
+    comments,
+  };
+}
+
 export function startLoadingComments() {
   return (dispatch) => {
     return database
@@ -77,46 +106,5 @@ export function startLoadingComments() {
         });
         dispatch(loadComments(comments));
       });
-  };
-}
-
-export function removePost(index) {
-  return {
-    type: 'REMOVER',
-    index, // or just index: theIndex
-  };
-}
-
-//remove in the App.js
-// removePhoto(postRemoved) {
-//   console.log(postRemoved.description);
-//   this.setState(state => ({
-//     posts: state.posts.filter(p => p !== postRemoved)
-//   }));
-
-//adding post
-// addPhotoUpdate(postUpdated) {
-//   this.setState(state => ({
-//     posts: state.posts.concat([postUpdated])
-//   }));
-// }
-export function addPost(post) {
-  return {
-    type: 'ADD',
-    post,
-  };
-}
-
-export function addComment(com, id) {
-  return {
-    type: 'ADD_COMMENT',
-    comment: com,
-    postId: id,
-  };
-}
-export function loadComments(comments) {
-  return {
-    type: 'LOAD_COMMENTS',
-    comments,
   };
 }
