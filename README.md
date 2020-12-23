@@ -6,7 +6,7 @@ __O'Reilly - The Complete React Js and Redux Course - Build Modern Web Apps__<br
 Course: (https://learning.oreilly.com/videos/the-complete-react/9781789950656) <br>
 Course length: <b>8 hours</b>
 
-### <u>Block directory </u>
+### <u>ModernReactBootcamp directory </u>
 __Udemy: The Modern React Bootcamp by Colt Steele__<br>
 Course: (https://www.udemy.com/modern-react-bootcamp/) <br>
 Course length: <b>39 hours</b>
@@ -16,7 +16,7 @@ __Udemy: The Complete React Native + Hooks Course by Stephen Grinder__<br>
 Course: (https://www.udemy.com/course/the-complete-react-native-and-redux-course/) <br>
 Course length: <b>38 hours</b>
 
-### <u>Section directory </u>
+### <u>CompleteGuide directory </u>
 __Udemy: React - The Complete Guide (incl Hooks, React Router, Redux) by Maximilian Schwarzmuller__<br>
 Course: (https://www.udemy.com/course/react-the-complete-guide-incl-redux/) <br>
 Course length: <b>40 hours</b>
