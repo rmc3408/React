@@ -3,13 +3,8 @@ function getMood() {
   const choice = Math.floor(Math.random() * feeling.length);
   return feeling[choice];
 }
+/* Arrow function does NOT work outside Class*/
 
-/* Arrow function does NOT work outside Class
-getMood = () => {
-  const feeling = ['Angry', 'Happy', 'Dizzy', 'Hungry'];
-  const choice = Math.floor(Math.random() * feeling.length);
-  return feeling[choice];
-}*/
 
 class Personal extends React.Component {
   render() {
@@ -25,4 +20,4 @@ class Personal extends React.Component {
   }
 }
 
-
+//ReactDOM.render(<Personal />, document.getElementById('rootPersonal'));

@@ -5,30 +5,29 @@ function getNum() {
 
 class NumPicker extends React.Component {
   render() {
-
-    const number = getNum();
+    const myNum = getNum();
 
     let msg;
-    if (number <= 5) {
+    if (myNum <= 4) {
       msg = (
         <div>
           <hr />
-          <p>Bad</p>
+          <p>low</p>
           <hr />
-        </div >
-      );
+        </div >);
+    } else {
+      msg = 'High';
     }
-    else
-      msg = "High";
 
-
-  return(
-      <div>
-        <h2>Your number is ..</h2>
-        <h1> {number} => {number == 7 ? "SeVen" : "Lose"} </h1>
-        <h3> {number > 7 && <img src='./win.jfif' />} </h3>
-        {msg}
-      </div >
-    );
-  }
+      return (
+          <div>
+            <h2>Your number is ..</h2>
+            <h1> {myNum} {myNum == 7 ? "SeVen" : "Lose"} </h1>
+            <h3> {myNum > 7 && <img src='./win.jfif' /> } </h3>
+          {msg}
+          </div >
+        );
+      }
 }
+
+//ReactDOM.render(<NumPicker />, document.getElementById('rootNumPicker'));
