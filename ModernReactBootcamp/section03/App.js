@@ -26,7 +26,8 @@ class App extends React.Component {
           <Slot frnd1="soup" frnd2="tree" frnd3="apple" num={3} /> 
         </div> 
         
-        <div style={{fontSize:'20px'}}>
+        <div style={{ fontSize: '20px' }}>
+          <Friend />
           <Friend name="Emma" hobbies={["Piano", "ballet", "Dolls"]} />
           <Friend name="Ivan" hobbies={["Docs", "Books", "kisses"]} />
           <Friend hobbies={["Play", "Run", "Sleep"]} bangs={4} />

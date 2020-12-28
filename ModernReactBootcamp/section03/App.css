@@ -7,12 +7,12 @@
 }
 .win {
     background-color: darkblue;
-    color: white;
+    color: gold;
     padding-left: 3rem;
 
 }
 
 .lose {
     background-color: red; 
-    color: white;
+    color: whitpinke;
 }

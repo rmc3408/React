@@ -5,9 +5,12 @@ class Slot extends React.Component {
     const rnd1 = Math.floor(Math.random() * fruits.length);
     const rnd2 = Math.floor(Math.random() * fruits.length);
     const rnd3 = Math.floor(Math.random() * fruits.length);
-    const { frnd1, frnd2, frnd3 } = this.props;
-      
     const isWinner = ((rnd1 === rnd2) && (rnd1 === rnd3));
+    
+    
+    const { frnd1, frnd3, frnd2 } = this.props;
+    console.log(frnd1);
+       
 
     //const slotNumber = fruits[rnd].repeat(this.props.num);
     return (
