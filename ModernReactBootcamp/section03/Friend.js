@@ -20,10 +20,10 @@ class Friend extends React.Component {
     return (
       <div >
         <h1 style={myStyle}> My name is {name}</h1>
-        {hobbies.map((r) => (
+        {hobbies.map((r, index) => (
           
-          <h4 style={myStyle} style={{ fontSize:'30px', color:'green' }}>
-            {r} {bangs}
+          <h4 style={myStyle} style={{ fontSize:'16px', color:'green' }}>
+            {r} {index % 2 !== 0 ? bangs+2 : this.props.bangs+2}
           </h4>
         ))}
       </div>
