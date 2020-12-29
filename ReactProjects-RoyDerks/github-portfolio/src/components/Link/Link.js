@@ -4,7 +4,8 @@ import './Link.css';
 
 const Innerlink = styled.a`
     text-decoration:none; 
-    padding: 4vmin 0;
+    display:inline;
+    border-bottom: 1px solid graylight;
     color: #092424;`;
 
 const Link = ({ url, title, size }) => (
@@ -13,8 +14,7 @@ const Link = ({ url, title, size }) => (
     //<a className='App-link'
     href={url}
     target='_blank'
-    rel='noopener noreferrer'> {title} <span>{size > 0 ? `${(size/1024).toFixed(2)}Mb`: ''}</span>
-  </Innerlink>
+    rel='noopener noreferrer'> {title} {size > 0 ? `${(size/1024).toFixed(2)}Mb`: ''} </Innerlink>
   </div>
 );
 

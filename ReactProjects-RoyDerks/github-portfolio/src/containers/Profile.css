@@ -23,21 +23,20 @@
 
 
 .repos{
-  margin: 10px 15%;
+  margin: 4px 15%;
   list-style: none;
   font-size: 1.5rem;
   padding: 20;
   text-align: left;
-  flex-basis: 60%;
 }
 
 .repos > ol {
- list-style: none;
- padding: 0;
- text-align: left;
+  font-size: 1rem;
+  padding: 4vmin 0;
+  list-style: none;
+  text-align: left;
 }
 
-.repos > ol > li {
- display: flex;
- justify-content: space-around;
+.repos li {
+ padding-bottom: 20px;
 }
