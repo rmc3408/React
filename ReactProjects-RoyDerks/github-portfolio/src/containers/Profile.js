@@ -41,9 +41,9 @@ class Profile extends Component {
 
         const gitItems = [
             { label: 'Full name', value: myData.name },
-            { label: 'location', value: myData.location },
-            { label: 'bio', value: myData.bio },
-            { label: 'html_url', value: <Link className="blackStyle" url={myData.html_url} title='my personal Github URL' /> },
+            { label: 'Location', value: myData.location },
+            { label: 'Bio', value: myData.bio },
+            { label: 'Personal Link', value: <Link className="blackStyle" url={myData.html_url} title='Github' /> },
             { label: 'login', value: myData.login},
             { label: 'repos_url', value: myData.repos_url }
         ];
@@ -58,8 +58,12 @@ class Profile extends Component {
                 <div className='Profile-container'>
                     <img className='Profile-avatar' src={myData.avatar_url} alt='avatar' />
                     <List title='Profile' items={gitItems} />
+                    
+                </div>
+                <div className='repos'>
                     <List title='Repositories' items={projects} />
-                </div>    
+                </div>
+                
             </div>
         );
       }

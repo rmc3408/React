@@ -1,29 +1,43 @@
 .Profile-container {
-    display:flex;
-    justify-content: space-between;
-    width: 70%;
-    margin: 10px auto;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
-  
-  .Profile-avatar {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    
-  }
-  
-  .Profile-container li {
-   list-style: none;
-   font-size: 1.5rem;
-   padding: 20;
-   text-align: left;
-   flex-basis: 60%;
-   
-  }
-  .Profile-container > ol > li > strong{
-    text-align: right;
-    
-   }
-  
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 10px auto;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.Profile-avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+.Profile-container li {
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 20;
+  text-align: left;
+  flex-basis: 60%;
+}
+
+
+.repos{
+  margin: 10px 15%;
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 20;
+  text-align: left;
+  flex-basis: 60%;
+}
+
+.repos > ol {
+ list-style: none;
+ padding: 0;
+ text-align: left;
+}
+
+.repos > ol > li {
+ display: flex;
+ justify-content: space-around;
+}
