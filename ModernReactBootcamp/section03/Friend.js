@@ -1,4 +1,5 @@
 class Friend extends React.Component {
+  
   static defaultProps = {
     name: "John Doe",
     hobbies: ["run"],
