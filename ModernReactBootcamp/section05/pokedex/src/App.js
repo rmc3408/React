@@ -18,7 +18,7 @@ class App extends Component() {
     <div className="App">
       <h1>Pokedex</h1>
     </div>
-  );
+    );
   }
 }
 
