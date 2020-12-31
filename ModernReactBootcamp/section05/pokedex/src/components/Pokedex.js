@@ -8,21 +8,21 @@ function Pokedex(props) {
   //console.log(props);
   const pokecards = props.pokecards;
   //console.log(pokecards);
-  console.log(props.isWinner);
-  
+  //console.log(props.isWinner);
+
   return (
-    <div>
-      <p> {props.isWinner} </p>
+    <div className="Pokedex-hand">
+      <h1 className={props.isWinner? 'Pokedex-Winner': 'Pokedex-lost'}> {props.isWinner ? "Winner" : "Lost"} </h1>
       <Container>
         <Row>
           {pokecards.map((card) => {
             //console.log(card);
             return (
-              <Col xs lg={3}>
-                <div key={card.id}>
+              <div key={card.id}>
+                <Col xs lg={3}>
                   <Pokecard {...card} />
-                </div>
-              </Col>
+                </Col>
+              </div>
             );
           })}
         </Row>

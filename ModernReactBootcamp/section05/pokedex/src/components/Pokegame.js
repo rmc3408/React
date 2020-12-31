@@ -18,19 +18,17 @@ class Pokegame extends Component {
             hand1.push(choosePokemon);
             
         }
-            //console.log(hand1);
-        console.log(hand2);
+        //console.log(hand1);
+        //console.log(hand2);
         
         let total1 = 0;
         for (let i=0; i < hand1.length; i++) {
             total1 += hand1[i].base_experience;
         }
-        console.log(total1);
-        let total2 = 0;
-        for (let i=0; i < hand1.length; i++) {
-            total2 += hand2[i].base_experience;
-        }
-        console.log(total2);
+        //console.log(total1);
+
+        let total2 = hand2.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
+        //console.log(total2);
         
         return <div>
             <h3>hand 01</h3>
@@ -38,7 +36,7 @@ class Pokegame extends Component {
             <Pokedex pokecards={hand1} isWinner={total1>total2} />
             <h3>hand 02</h3>
             <p> total team experience = {total2}XP </p>
-            <Pokedex pokecards={hand2} isWinner={total1>total2}/>
+            <Pokedex pokecards={hand2} isWinner={total1<total2}/>
         </div>
 
     }

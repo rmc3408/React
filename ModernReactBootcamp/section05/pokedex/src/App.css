@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
 .App {
+  margin: 0;
+  background-color: #ffffff;
+  color: #4d4d4d;
+  font-family: 'Roboto Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   text-align: center;
 }
@@ -10,4 +18,25 @@
 
 .Pokedex-Jumbotron {
   color: goldenrod;
+}
+
+.Pokedex-hand {
+  border: 2px solid lightgray;
+  margin: 20px 5% 60px 5%;
+}
+
+.Pokedex-Winner {
+  color: green;
+}
+.Pokedex-lost {
+  color: red;
+}
+.Pokecard-img {
+  opacity: 0.7;
+}
+
+.Pokecard-img:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  transition: all ease 500ms;
 }
