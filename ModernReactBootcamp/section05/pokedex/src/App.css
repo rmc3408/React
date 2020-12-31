@@ -1,9 +1,13 @@
 .App {
   margin: 0;
-  background-color: lightseagreen;
   text-align: center;
 }
 .mycard {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   width: 15rem; 
+  box-shadow: 7px 10px 12px -5px rgba(0,0,0,0.56);
+}
+
+.Pokedex-Jumbotron {
+  color: goldenrod;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Pokedex from './components/Pokedex';
+import Pokegame from './components/Pokegame';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,11 +20,14 @@ class App extends Component {
   };
   
   render() {
-    console.log('app render');
+    //console.log('app render');
 
     return(
       <div className="App">
-        <Pokedex pokecards={this.props.pokemons} />
+        <Jumbotron fluid>
+        <h2 className="Pokedex-Jumbotron">Pokedex Game</h2>
+        </Jumbotron>
+        <Pokegame {...this.props}/>
     </div>
     );
   }

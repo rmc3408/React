@@ -3,7 +3,10 @@ import Card from 'react-bootstrap/Card';
 
 function Pokecard(props) {
   //console.log(props);
-    const pokeURL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`;
+  //const pokeURL2 = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.id}.png`;
+  const num = props.id < 10 ? '00' + props.id : props.id < 100 ? '0' + props.id : props.id;
+  //console.log(num);
+  const pokeURL = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${num}.png`;
   return (
     <div >          
       <Card className="mycard" >
