@@ -13,7 +13,7 @@ Section 1: A Taste of React &check; <br>
 Section 2: Introducing JSX &check; <br>
 Section 3: Props and More &check; <br>
 Section 4: Introducing Create React App &check; <br>
-Section 5: Pokedex Project  <br>
+Section 5: Pokedex Project &check; <br>
 Section 6: Introducing State  <br>
 Section 7: React State Dice Exercise  <br>
 Section 8: React State Patterns  <br>
