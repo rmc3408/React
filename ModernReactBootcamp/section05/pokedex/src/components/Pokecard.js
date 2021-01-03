@@ -11,7 +11,7 @@ function Pokecard(props) {
     <div >          
       <Card className="mycard" >
         <Card.Body>
-          <Card.Title> {props.name} </Card.Title>
+          <Card.Title>{props.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted"> {props.type} </Card.Subtitle>
           <Card.Img className="Pokecard-img" variant="top" src={pokeURL} />
           <Card.Text> base of experience {props.base_experience} </Card.Text>
