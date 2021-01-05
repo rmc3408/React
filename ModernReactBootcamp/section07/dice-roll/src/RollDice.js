@@ -14,6 +14,8 @@ class RollDice extends Component {
             dices: ['one','six'],
             color: '#3F51B5',
             size: '10x',
+            isRolling: false,
+
             
         };
         
@@ -38,17 +40,18 @@ class RollDice extends Component {
 
     render() {
         return (
-            <div>
-                <div className="Die-dices">
-                    {this.state.dices.map((thedice, index) => <Die
+            <div className="Die-dices">
+                <div className="Die-dice">
+                {this.state.dices.map((thedice, index) => 
+                    <Die
                         key={index}
                         dice={thedice}
                         colour={this.state.color}
                         size={this.state.size}
-                    />
+                    /> 
                 )}
                 </div>
-                <div>
+                <div className="Die-btn">
                     <Button onClick={this.roll} variant="contained" color="primary">Roll dice</Button>  
                 </div>
                               
