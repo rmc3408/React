@@ -29,7 +29,7 @@ class RollDice extends Component {
             newDice[index] = this.props.options[rnd];
             //console.log(newDice[index]);
         }
-        console.log(newDice);
+        //console.log(newDice);
         this.setState({
             dices: newDice
         });
