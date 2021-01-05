@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Button from "@material-ui/core/Button";
 import Die from './Die';
 
+
+
 class RollDice extends Component {
     
     static defaultProps = {
@@ -33,8 +35,15 @@ class RollDice extends Component {
         }
         //console.log(newDice);
         this.setState({
-            dices: newDice
+            dices: newDice,
+            isRolling: true
         });
+        setTimeout(() => {
+            this.setState({
+                isRolling: false
+            });
+        },2000);
+        
         
     }
 
@@ -48,11 +57,18 @@ class RollDice extends Component {
                         dice={thedice}
                         colour={this.state.color}
                         size={this.state.size}
+                        rolling={this.state.isRolling}
                     /> 
                 )}
                 </div>
                 <div className="Die-btn">
-                    <Button onClick={this.roll} variant="contained" color="primary">Roll dice</Button>  
+                        <Button
+                        disabled={this.state.isRolling}
+                        onClick={this.roll}
+                        variant="contained"
+                        color="primary">{this.state.isRolling ? 'ROLLING' : 'Roll dice'}
+                    
+                        </Button>
                 </div>
                               
             </div>
