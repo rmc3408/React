@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+.Scorekeeper {
+  background-color: rgb(85, 218, 223);
+  margin: 6cm 3cm 0 3cm;
+}
+
+.Scorekeeper > h1 {
+  font-size: 4em;
+  color: rgb(29, 29, 36);
+}
+
+
+
+
+.IconList {
+  background-color: cadetblue;
+  margin: 6cm 3cm 0 3cm;
+}
+
+.IconList > h1 > i{
+  font-size: 4em;
+  color: blue;
+}
