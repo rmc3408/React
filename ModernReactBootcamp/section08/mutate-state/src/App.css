@@ -1,6 +1,61 @@
 .App {
   text-align: center;
 }
+.Lottery {
+  border-radius: 10px;
+  width: 60em;
+  margin: 4em auto auto;
+  border: 2px solid gray;
+}
+.Lottery button {
+  background-color: darkblue;
+  color:whitesmoke;
+  font-size: 120%;
+  border-radius: 10px;
+  padding: 8px 26px 8px 26px;
+  margin: 6em auto 2em auto;
+  
+}
+
+.Ball {
+  color: beige;
+  background-color: lightsalmon;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 4.5em;
+  height: 4.5em;
+  font-size: 1.5em;
+  padding-top: 1.5em;
+  border-style: none;
+}
+.Ball ~button {
+  margin-left: auto;
+  margin-right:auto;
+  margin-top: 30px;
+  font-size: larger;
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .Scorekeeper {
   background-color: rgb(85, 218, 223);
   margin: 6cm 3cm 0 3cm;
