@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class Coin extends Component {
   render() {
     return (
       <div>
-          <h1>{this.props.img}</h1>
+        {this.props.img == null ? 'Start to Play' : <img src={this.props.img.imgSrc} alt='coin'/>}
       </div>
     )
   }
