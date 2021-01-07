@@ -1,18 +1,21 @@
 /node_modules
 /Resources
 
-
 /Emmanuel Henri - OReilly/notepad/node_modules
-
 /Rayan Slim - PhotoWall/node_modules
-
 /ReactNative_Part01 - Basics/rn-starter/.expo
 /ReactNative_Part01 - Basics/rn-starter/node_modules
 
+
 /ReactProjects-RoyDerks/movieList/node_modules
 /ReactProjects-RoyDerks/github-portfolio/node_modules
+/ReactProjects-RoyDerks/proj-manag/node_modules
+
 
 /ModernReactBootcamp/section04/fruits/node_modules
 /ModernReactBootcamp/section05/pokedex/node_modules
-/ReactProjects-RoyDerks/proj-manag/node_modules
 /ModernReactBootcamp/section06/make-timer/node_modules
+/ModernReactBootcamp/section07/dice-roll/node_modules
+/ModernReactBootcamp/section08/mutate-state/node_modules
+/ModernReactBootcamp/section09/coin-flipper/node_modules
+
