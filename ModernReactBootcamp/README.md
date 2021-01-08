@@ -17,7 +17,7 @@ Section 5: Pokedex Project &check; <br>
 Section 6: Introducing State &check; <br>
 Section 7: React State Dice Exercisec &check; <br>
 Section 8: React State Patterns &check; <br>
-Section 9: State Exercises!  <br>
+Section 9: State Exercises! &check; <br>
 Section 10: The World of React Events  <br>
 Section 11: Hangman Exercise <br>
 Section 12: Lights Out Game <br>
