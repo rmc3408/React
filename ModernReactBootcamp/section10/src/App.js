@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
+import "./WiseSquare.css";
+import "./ButtonList.css";
 
 import NumberList from "./NumberList";
 import BetterNumberList from "./BetterNumberList";

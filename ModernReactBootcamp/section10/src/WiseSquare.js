@@ -16,7 +16,7 @@ class WiseSquare extends Component {
   render() {
     return (
       <div className='WiseSquare' onMouseEnter={this.dispenseWisdom}>
-        😃
+        x
       </div>
     );
   }

@@ -22,7 +22,7 @@ class WiseSquareWithProps extends Component {
 
   render() {
     return (
-      <div className='WiseSquare' onMouseEnter={this.dispenseWisdom}></div>
+      <div className='WiseSquare' onMouseEnter={this.dispenseWisdom}> With Props </div>
     );
   }
 }
