@@ -1,8 +1,8 @@
 .Hangman {
-  width: 400px;
+  width: 300px;
   color: black;
   text-align: center;
-  zoom: 1.3;
+  zoom: 1.2;
 }
 
 .Hangman img {
@@ -27,7 +27,7 @@
 .Hangman-btns {
   text-align: center;
   display: inline-block;
-  width: 250px;
+  width: 350px;
   margin-top: 0;
 }
 
@@ -55,4 +55,11 @@
   background: #bdbdbd;
   color: #eeeeee;
   box-shadow: 0 6px #9e9e9e;
+}
+
+#reset {
+  width: 100%;
+  background: red;
+  color: white;
+  box-shadow: 0 6px #8b3d33;
 }
