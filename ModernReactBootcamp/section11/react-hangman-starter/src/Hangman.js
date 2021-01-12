@@ -11,7 +11,7 @@ import img6 from "./6.jpg";
 class Hangman extends Component {
   /** by default, allow 6 guesses and use provided gallows images. */
   static defaultProps = {
-    maxWrong: 6,
+    maxWrong: 6, //this.props.images.length,
     images: [img0, img1, img2, img3, img4, img5, img6]
   };
 
@@ -24,7 +24,14 @@ class Hangman extends Component {
     };
     this.handleGuess = this.handleGuess.bind(this);
   }
-
+  isGameOver() {
+    if (this.props.maxWrong > this.state.nWrong) {
+      return <img src={this.props.images[this.state.nWrong]} />;
+    }
+    else {
+      return <img src={this.props.images[this.props.maxWrong]} />;
+    }
+  }
   /** guessedWord: show current-state of word:
     if guessed letters are {a,p,e}, show "app_e" for "apple"
   */
@@ -66,9 +73,16 @@ class Hangman extends Component {
     return (
       <div className='Hangman'>
         <h1>Hangman</h1>
-        <img src={this.props.images[this.state.nWrong]} />
+        <p>Number Wrong guesses: {this.state.nWrong}</p>
+        {this.isGameOver()} 
         <p className='Hangman-word'>{this.guessedWord()}</p>
-        <p className='Hangman-btns'>{this.generateButtons()}</p>
+        {this.state.nWrong < this.props.maxWrong ? 
+          <p className='Hangman-btns'>{this.generateButtons()}</p> :
+          (<div>
+            <h3> Game Over</h3>
+            <p> Answer is {this.state.answer}</p>
+            </div>)}
+        
       </div>
     );
   }
