@@ -7,13 +7,13 @@ import './Board.css';
  *
  * Properties:
  *
- * - nrows: number of rows of board
- * - ncols: number of cols of board
- * - chanceLightStartsOn: float, chance any cell is lit at start of game
+ * - nRows: number of rows of board
+ * - nCols: number of cols of board
+ * ---- chanceLightStartsOn: float, chance any cell is lit at start of game
  *
  * State:
  *
- * - hasWon: boolean, true when board is all off
+ * - isWinner: boolean, true when board is all off
  * - board: array-of-arrays of true/false
  *
  *    For this board:
@@ -30,25 +30,39 @@ import './Board.css';
  **/
 
 class Board extends Component {
+  static defaultProps = {
+    nRows: 3,
+    nCols: 3,
+    chanceLightStartsOn: 0.35
 
+  };
   constructor(props) {
     super(props);
+    this.state = {
+      board: this.createBoard(),
+      isWinner: false,
 
+    };
     // TODO: set initial state
   }
 
   /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
 
   createBoard() {
-    let board = [];
-    // TODO: create array-of-arrays of true/false values
-    return board
+    let board = Array.from({ length: this.props.nRows });
+    board = board.map(() => {
+      let secArray = Array.from({ length: this.props.nCols });
+      secArray = secArray.map(()=> Math.random().toFixed(3) < this.props.chanceLightStartsOn);
+      return secArray;
+    });
+
+    return board;
   }
 
   /** handle changing a cell: update board & determine if winner */
 
   flipCellsAround(coord) {
-    let {ncols, nrows} = this.props;
+    let {nCols, nRows} = this.props;
     let board = this.state.board;
     let [y, x] = coord.split("-").map(Number);
 
@@ -56,7 +70,7 @@ class Board extends Component {
     function flipCell(y, x) {
       // if this coord is actually on board, flip it
 
-      if (x >= 0 && x < ncols && y >= 0 && y < nrows) {
+      if (x >= 0 && x < nCols && y >= 0 && y < nRows) {
         board[y][x] = !board[y][x];
       }
     }
@@ -66,14 +80,29 @@ class Board extends Component {
     // win when every cell is turned off
     // TODO: determine is the game has been won
 
-    this.setState({board, hasWon});
+    ////this.setState({board, isWinner});
   }
 
 
   /** Render game board or winning message. */
 
   render() {
+    return (
+      <div>
+        <h1> Lights out</h1>
+        <table className="Board">
+          <tbody>
+            {this.state.board.map((row, idxRow) => { 
+              return <tr key={idxRow}>{row.map((val, idxCol) =>
+                // <Cell key={idxCol} isLit={this.state.board[idxRow][idxCol]} />
+                <Cell key={`${idxRow}-${idxCol}`} isLit={val} />
+              )}</tr>
+               })}
+          </tbody>
+        </table>
 
+      </div>
+    );
     // if the game is won, just show a winning msg & render nothing else
 
     // TODO
