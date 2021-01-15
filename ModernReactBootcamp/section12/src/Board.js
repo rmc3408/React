@@ -83,8 +83,7 @@ class Board extends Component {
                     <Cell
                       key={`${idxRow}-${idxCol}`}
                       isLit={val}
-                      flipCells={() =>
-                        this.flipCellsAroundMe(`${idxRow}-${idxCol}`)
+                      flipCells={() => this.flipCellsAroundMe(`${idxRow}-${idxCol}`)
                       }
                     />
                   ))}
