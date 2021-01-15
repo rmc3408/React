@@ -70,6 +70,9 @@ class Board extends Component {
   /** Render game board or winning message. */
 
   render() {
+    if (this.state.isWinner) {
+      return <h1> WON! </h1>
+    }
     return (
       <div>
         <h1> Lights out</h1>
