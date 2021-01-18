@@ -18,7 +18,10 @@ class SimpleForm extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault(); //avoid reload page with POST method
-        console.log(`the username is ${this.state.username}`)
+        console.log(`the username is ${this.state.username}`);
+        this.setState({
+            username: ''
+        });
     }
 
 

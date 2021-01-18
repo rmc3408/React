@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import SimpleForm from './SimpleForm';
 import MultiForm from './MultiForm';
-
+import ShopList from './ShopList';
 
 function App() {
   return (
@@ -15,9 +15,10 @@ function App() {
       </header>
       <div className="SimpleForm"> 
         <SimpleForm />
-      </div>
-      <div className="MultiForm"> 
         <MultiForm />
+      </div>
+      <div className="AddNote"> 
+       <ShopList /> 
       </div>
 
     </div>

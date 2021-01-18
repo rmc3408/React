@@ -44,22 +44,27 @@
   padding: 20px;
 }
 .SimpleForm input{
-  width: 80%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-.MultiForm {
+.AddNote {
   border: 2px solid gray;
   width: 60ch;
   margin: 30px auto; 
   padding: 20px;
+  text-justify: left;
 }
-.MultiForm input {
+.AddNote li{
+  text-align: left;
+}
+
+.AddNote input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
