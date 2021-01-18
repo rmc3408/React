@@ -21,7 +21,7 @@ Section 9: State Exercises! &check; <br>
 Section 10: The World of React Events &check; <br>
 Section 11: Hangman Exercise &check; <br>
 Section 12: Lights Out Game &check; <br>
-Section 13: Forms in React <br>
+Section 13: Forms in React &check; <br>
 Section 14: Forms Exercise <br>
 Section 15: Todo List Project <br>
 Section 16: Building Yahtzee <br>
