@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
 
+
 class ShopListForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             name: '',
             qty: ''
         };
@@ -18,6 +20,7 @@ class ShopListForm extends Component {
         console.log(`the food is ${this.state.name} and quantity is ${this.state.qty}`);
         this.props.onAddItems(this.state);
         this.setState({
+            id: '',
             name: '',
             qty: '',
         });
