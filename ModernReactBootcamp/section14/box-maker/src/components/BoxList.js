@@ -24,11 +24,11 @@ class BoxList extends Component {
         });
     }
     removeBox(id) {
-        const idx = this.state.boxes.findIndex(id);
-        console.log(idx);
-        this.setState({
-            boxes: [...this.state.boxes.splice(idx, 1)]
-        });
+        const idx = this.state.boxes.findIndex(p => p.id === id);
+        this.state.boxes.splice(idx, 1);
+        this.setState(curSt => ({
+             boxes: curSt.boxes,
+        }));
     }
 
     render() {
@@ -36,9 +36,9 @@ class BoxList extends Component {
             <div>
                 <NewBoxForm addBox={this.addItemBox}/>
                 {this.state.boxes.map(p => <Box
-                    key={this.state.boxes.id}
+                    key={p.id}
                     {...p}
-                    removebyID={this.removeBox}
+                    removeByID={this.removeBox}
                 />)}
                 
             </div>

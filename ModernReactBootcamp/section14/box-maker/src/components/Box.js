@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 
 class Box extends Component {
     
-
-
-
+    
     render() {
         const myCSStyle = {
             marginTop: 80,
@@ -20,7 +18,7 @@ class Box extends Component {
         return (
             <div style={myCSStyle} >
                 <div style={boxStyle}></div>
-                <button onClick={() => { this.props.removebyID(this.props.id); }}> Remove this Box </button>
+                <button onClick={() => { this.props.removeByID(this.props.id); }}> Remove this Box </button>
             </div>
 
         )
