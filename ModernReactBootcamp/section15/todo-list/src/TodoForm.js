@@ -4,7 +4,7 @@ class TodoForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      task: ""
+      task: "",
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,11 +16,11 @@ class TodoForm extends Component {
   }
 
   handleSubmit(evt) {
-      evt.preventDefault();
-      this.props.addTask(this.state);
-      this.setState({
-          task: ''
-      });
+    evt.preventDefault();
+    this.props.addTask(this.state);
+    this.setState({
+      task: "",
+    });
   }
 
   render() {
