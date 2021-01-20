@@ -31,6 +31,7 @@ class TodoForm extends Component {
           <label htmlFor="Task">Task: </label>
           <input
             type="text"
+            placeholder="Enter your task here..."
             id="Task"
             name="task"
             value={this.state.task}

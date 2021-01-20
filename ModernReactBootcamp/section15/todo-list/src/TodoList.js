@@ -8,7 +8,7 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [{ task: "hello", id: uuidv4(), completed: false }],
+      todos: [{ task: 'Be creative', id: uuidv4(), completed: false }],
     };
     this.addTask = this.addTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
