@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 import { v4 as uuidv4 } from "uuid";
+import './TodoList.css';
 
 class TodoList extends Component {
   constructor(props) {
@@ -49,7 +50,8 @@ class TodoList extends Component {
 
   render() {
     return (
-      <div>
+      <div className='TodoList'>
+        <h1>Today's Tasks <span>Simple React List</span></h1>
         <ul>
           {this.state.todos.map((t) => (
             <Todo

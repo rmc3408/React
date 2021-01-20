@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Todo.css';
 
 class Todo extends Component {
   constructor(props) {
@@ -37,26 +38,30 @@ class Todo extends Component {
 
   render() {
     const TodosList = (
-      <div>
-        <button onClick={this.handleEdit}>Edit</button>
-        <button onClick={this.eliminatorTask}>X</button>
+      <div className='Todo'>
         <li
-          className={this.props.isDone ? "Todo-close" : ""}
+          className={this.props.isDone ? "Todo-task completed" : "Todo-task"}
           onClick={this.closeTask}
         >
           {this.props.note}
         </li>
+        <div className='Todo-buttons'>
+        <button onClick={this.handleEdit}><i class='fas fa-pen' /></button>
+          <button onClick={this.eliminatorTask}><i class='fas fa-trash' /></button>
+        </div>
       </div>
     );
 
     const editingTask = (
-      <div>
+      <div className='Todo'>
+        <div className='Todo-edit-form'>
         <input
           type="text"
           value={this.props.note}
           onChange={this.handleChanges}
         />
-        <button onClick={this.confirmationEdit}>Confirm</button>
+          <button onClick={this.confirmationEdit}>Confirm</button>
+        </div>
       </div>
     );
 
