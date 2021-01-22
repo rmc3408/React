@@ -11,7 +11,7 @@ class Die extends Component {
   }
 
   render() {
-    const num;
+    let num;
     switch (this.props.val) {
       case 1:
         num = "one";
@@ -26,24 +26,24 @@ class Die extends Component {
         num = "four";
         break;
       case 5:
-        num = "one";
+        num = "five";
         break;
       case 6:
-        num = "one";
+        num = "six";
         break;
-
       default:
+        num = null;
         break;
     }
+    const { locked, isRolling, disabled } = this.props;
+    const lockerDie = ` Die${locked ? "-locked" : ""}`;
+    const rollingDie = locked ? '' : ` Die${isRolling ? "-rolling" : ""}`;
+    const die = ` fas fa-5x fa-dice-${num}`;
+
+    const myClassName = "Die " + die + rollingDie + lockerDie;
 
     return (
-      <button
-        className={"Die"}
-        style={{ backgroundColor: this.props.locked ? "grey" : "black" }}
-        onClick={this.sendClick}
-      >
-        {this.props.val}
-      </button>
+      <i onClick={this.sendClick} className={myClassName} disabled={disabled}></i>
     );
   }
 }
