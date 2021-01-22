@@ -22,7 +22,9 @@ class Rule {
   freq(dice) {
     // frequencies of dice values
     const freqs = new Map();
-    for (let d of dice) freqs.set(d, (freqs.get(d) || 0) + 1);
+    for (let d of dice) {
+      freqs.set(d, (freqs.get(d) || 0) + 1);
+    }
     return Array.from(freqs.values());
   }
 
@@ -38,7 +40,7 @@ class Rule {
  */
 
 class TotalOneNumber extends Rule {
-  evalRoll = dice => {
+  evalRoll = (dice) => {
     return this.val * this.count(dice, this.val);
   };
 }

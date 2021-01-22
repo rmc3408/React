@@ -50,7 +50,6 @@ class Game extends Component {
       locked: [...st.locked.slice(0, idx), !st.locked[idx], ...st.locked.slice(idx + 1) ]
     }));
   }
-
   doScore(rulename, ruleFn) {
     // evaluate this ruleFn with the dice and score this rulename
     this.setState(st => ({
