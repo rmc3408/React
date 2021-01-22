@@ -56,7 +56,7 @@ class Game extends Component {
   }
 
   toggleLocked(idx) {
-    if (this.state.rollsLeft > 0) {
+    if (this.state.rollsLeft > 0 && !this.state.isRolling) {
       this.setState(st => ({
         locked: [...st.locked.slice(0, idx), !st.locked[idx], ...st.locked.slice(idx + 1)]
       }));
@@ -69,7 +69,7 @@ class Game extends Component {
       rollsLeft: NUM_ROLLS,
       locked: Array(NUM_DICE).fill(false)
     }));
-      this.roll();
+      this.animateRoll();
   }
 
   render() {
