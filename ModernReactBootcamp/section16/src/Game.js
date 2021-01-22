@@ -14,6 +14,7 @@ class Game extends Component {
       locked: Array(NUM_DICE).fill(false),
       rollsLeft: NUM_ROLLS,
       isRolling: false,
+      total: 0,
       scores: {
         ones: undefined,
         twos: undefined,
@@ -35,6 +36,7 @@ class Game extends Component {
     this.doScore = this.doScore.bind(this);
     this.toggleLocked = this.toggleLocked.bind(this);
     this.displayRollInfo = this.displayRollInfo.bind(this);
+    this.countScores = this.countScores.bind(this);
   }
   componentDidMount() {
     this.animateRoll();
@@ -76,6 +78,11 @@ class Game extends Component {
     }));
       this.animateRoll();
   }
+  countScores(point) {
+    this.setState(st => ({
+      total: st.total + point,
+    }));
+  }
 
   render() {
     return (
@@ -102,7 +109,7 @@ class Game extends Component {
             </div>
           </section>
         </header>
-        <ScoreTable doScore={this.doScore} scores={this.state.scores} />
+        <ScoreTable doScore={this.doScore} countScores={this.countScores} scores={this.state.scores} />
       </div>
     );
   }
