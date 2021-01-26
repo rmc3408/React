@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Timer from "./Timer";
-import ZenPhrase from './ZenPhrase';
+import ZenPhrase from "./ZenPhrase";
 import GitHub from "./GitHub";
 
 function App() {
@@ -14,9 +14,10 @@ function App() {
       <div>
         <Timer />
         <ZenPhrase />
-        <GitHub username='rmc3408' />
-        <GitHub username='octocat' />
-        
+        <div className='Github-profiles'>
+          <GitHub username="rmc3408" />
+          <GitHub username="octocat" />
+        </div>
       </div>
     </div>
   );
