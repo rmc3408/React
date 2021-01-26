@@ -14,7 +14,9 @@ function App() {
       <div>
         <Timer />
         <ZenPhrase />
-        <GitHub />
+        <GitHub username='rmc3408' />
+        <GitHub username='octocat' />
+        
       </div>
     </div>
   );
