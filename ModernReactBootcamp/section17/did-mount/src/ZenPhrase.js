@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ZenPhrase.css';
 import axios from 'axios';
 
 export class ZenPhrase extends Component {
@@ -6,6 +7,7 @@ export class ZenPhrase extends Component {
         super(props);
         this.state = {
             quote: '',
+            isLoaded: false,
         }
         console.log("contructor!");
     }
@@ -14,22 +16,19 @@ export class ZenPhrase extends Component {
         axios.get('https://api.github.com/zen').then(r => {
             setTimeout(function() {
                 this.setState({
-                quote: r.data,
+                    quote: r.data,
+                    isLoaded: true
             });
             }.bind(this), 2000);
-            
-            
-            //console.log(r)
+           
         });
 
     }
     render() {
+        const prov = <div><h1> Today's proverbs is ...</h1><p>{this.state.quote}</p></div>;
         return (
             <div>
-                <h1> Today's proverbs is ...</h1>
-                <span className='loader'></span>
-                <p> {this.state.quote} </p>
-
+                {this.state.isLoaded ? prov : < div className='loader'></div>}
             </div>
         )
     }

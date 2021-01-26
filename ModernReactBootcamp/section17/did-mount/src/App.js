@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Timer from "./Timer";
 import ZenPhrase from './ZenPhrase';
+import GitHub from "./GitHub";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div>
         <Timer />
         <ZenPhrase />
+        <GitHub />
       </div>
     </div>
   );
