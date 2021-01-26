@@ -1,14 +1,16 @@
 ![modernReact](https://user-images.githubusercontent.com/24855472/61600077-bea36b80-abfc-11e9-9261-02d2d20652f9.png)
 
-## Udemy: The Modern React Bootcamp by Colt Steele 
+## Udemy: The Modern React Bootcamp by Colt Steele
+
 Course: (https://www.udemy.com/modern-react-bootcamp/) <br>
 Course length: <b>39 hours</b>
 
 Welcome to the best online resource for learning React! Published in April 2019, this course is brand new and covers the latest in React.
 
-*This repo is a collection of the work I will be completing for the course listed*
+_This repo is a collection of the work I will be completing for the course listed_
 
 ### Course Outline:
+
 Section 1: A Taste of React &check; <br>
 Section 2: Introducing JSX &check; <br>
 Section 3: Props and More &check; <br>
@@ -26,7 +28,7 @@ Section 14: Forms Exercise &check; <br>
 Section 15: Todo List Project <br>
 Section 16: Building Yahtzee &check; <br>
 Section 17: React Lifecycle Methods &check; <br>
-Section 18: LifeCycle Methods & API Exercise <br>
+Section 18: LifeCycle Methods & API &check; <br>
 Section 19: Building the Dad Jokes App <br>
 Section 20: React Router: <br>
 Section 21: Vending Machine Exercise <br>
