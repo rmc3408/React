@@ -1,12 +1,11 @@
 import React from 'react'
 
 function Card(props) {
-    const lastCard = 51 - props.remaining;
+    const lastCard = 51 - props.num;
     //console.log(lastCard);
     return (
-        <div className="Card-deck">
-            <p>{props.remaining}</p>
-            <img src={props.card[lastCard]} alt={lastCard} />
+        <div>
+            <img className="Card-img" src={props.imgUrl} alt={lastCard} />
         </div>
     )
 }

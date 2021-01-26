@@ -1,15 +1,16 @@
 .App {
   text-align: center;
+  
 }
 
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .Card-img {
+    animation: Card-logo-spin infinite 100s linear;
   }
 }
 
-@keyframes App-logo-spin {
+@keyframes Card-logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -17,10 +18,43 @@
     transform: rotate(360deg);
   }
 }
-
 .Card-deck {
-  margin: 80px auto;
-  width: 400px;
-  height: 400px;
-  background-color: brown;
+  margin: auto;
+}
+
+.Card-img {
+  position: absolute;
+  left:calc(50% - 120px);
+  top: 300px;
+  transform: rotate(10deg);
+}
+
+.Table-title {
+  color: azure;
+  font-size: 2.4rem;
+  letter-spacing: 3pt;
+
+}
+.Table-title-subtitle{
+  color: rgb(204, 224, 224);
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.Table-btn {
+  background: none;
+  color: #961100;
+  border: 2px solid azure;
+  padding: 1em 2em;
+  margin: 1em;
+  outline: none;
+}
+
+.Table-btn:hover {
+  background: none;
+  color: azure;
+  border: 2px solid #961100;
+  padding: 1em 2em;
+  margin: 1em;
+  outline: none;
+  transition: 0.4s;
 }
