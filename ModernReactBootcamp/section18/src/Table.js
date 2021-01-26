@@ -32,12 +32,6 @@ class Table extends Component {
         }));
     }
 
-    async componentDidUpdate() {
-
-         
-    }
-    
-    
   render() {
     return (
       <div>
