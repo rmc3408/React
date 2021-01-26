@@ -25,7 +25,7 @@ Section 13: Forms in React &check; <br>
 Section 14: Forms Exercise &check; <br>
 Section 15: Todo List Project <br>
 Section 16: Building Yahtzee &check; <br>
-Section 17: React Lifecycle Methods <br>
+Section 17: React Lifecycle Methods &check; <br>
 Section 18: LifeCycle Methods & API Exercise <br>
 Section 19: Building the Dad Jokes App <br>
 Section 20: React Router: <br>
