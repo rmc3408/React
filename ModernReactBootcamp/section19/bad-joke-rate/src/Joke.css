@@ -2,7 +2,7 @@
   display: flex;
   border-bottom: 2px solid #eeeeee;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-weight: 400;
   padding: 1rem;
 }
