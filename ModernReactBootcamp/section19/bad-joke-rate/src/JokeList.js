@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Joke from './Joke';
+import './JokeList.css';
 
 class JokeList extends Component {
     static defaultProps = {
@@ -28,10 +29,10 @@ class JokeList extends Component {
         const mappedJokes = this.state.jokes.map(j => <Joke key={j.id} joke={j.joke}/> )
         return (
             <div className='JokeList'>
-                <div className="JokeList-sideebar">
-                    <h1 className="JokeList-title"><span>Daddy</span> Joke</h1>
-                    <img src="" alt='emoji' />
-                    <button>New jokes</button>
+                <div className="JokeList-sidebar">
+                    <h1 className="JokeList-title"><span>Daddy</span> Jokes</h1>
+                    <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/230/grinning-face-with-one-large-and-one-small-eye_1f92a.png" alt='emoji' />
+                    <button className="JokeList-btn">New jokes</button>
                 </div>
                 <div className="JokeList-jokes">
                     {mappedJokes}
