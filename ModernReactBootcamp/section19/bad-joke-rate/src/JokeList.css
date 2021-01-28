@@ -14,7 +14,7 @@
   text-align: center;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1),
     inset 0 0 25px #7e57c2;
-    border-radius: 10px;
+  border-radius: 10px;
   z-index: 2;
 }
 
@@ -39,7 +39,6 @@
 .JokeList-sidebar img {
   width: 40%;
   border-radius: 50%;
-  border: none;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 }
 .JokeList-sidebar img:hover {
@@ -80,16 +79,16 @@
 
 .JokeList-btn {
   font-size: 1.5rem;
-  width: 50%;
+  width: 80%;
   border-radius: 2rem;
   padding: 1rem 2rem;
   color: white;
   font-weight: 700;
   margin: 2rem;
   border: none;
-  word-spacing: 0.2rem;
+  word-spacing: 2.5rem;
   cursor: pointer;
-  transition: 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: 0.2s cubic-bezier(0.2, 1, 0.2, 1);
   outline: none;
   background: linear-gradient(
     135deg,
@@ -101,8 +100,8 @@
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 }
 
-.JokeList-getmore:hover {
-  transform: translateY(-2px);
+.JokeList-btn:hover {
+  transform: translateY(-3px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
