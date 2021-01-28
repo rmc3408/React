@@ -22,7 +22,7 @@ class Joke extends Component {
                     <i className="fas fa-arrow-down" onClick={() => this.handleUp(-1)}></i>
                 </div>
                 <div className="Joke-text">{this.props.joke}</div>
-                <div className="Joke-smiley"><i class={`em ${this.props.emoji[face]}`} aria-label="BIRD"></i></div>
+                <div className="Joke-smiley"><i className={`em ${this.props.emoji[face]}`} aria-label="BIRD"></i></div>
             </div>
         )
     }

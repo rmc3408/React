@@ -4,8 +4,11 @@ import Joke from "./Joke";
 import "./JokeList.css";
 
 class JokeList extends Component {
+
+
+
   static defaultProps = {
-      numJokes: 10,
+      posts: 4,
       emoji: [
           "em-nauseated_face",
           "em-disappointed_relieved",
@@ -13,16 +16,28 @@ class JokeList extends Component {
           "em-smiley",
           "em-rolling_on_the_floor_laughing"]
   };
+
+
+
   constructor(props) {
     super(props);
+
+    this.stringParseJSON = window.localStorage.getItem("stored");
     this.state = {
-      jokes: [],
-      isFullLoaded: false,
+      jokes: JSON.parse(this.stringParseJSON) || [],
+      totalJokes: JSON.parse(window.localStorage.getItem("total")) || this.props.posts,
+      numClicks: 0,
     };
     this.voteUP = this.voteUP.bind(this);
+    this.handleButton = this.handleButton.bind(this);
   }
-  async componentDidMount() {
-    while (this.state.jokes.length < this.props.numJokes) {
+
+
+
+
+  async getJokes() {
+    
+    while (this.state.jokes.length < this.state.totalJokes) {
       let joke = await axios.get("https://icanhazdadjoke.com/", {
         headers: { Accept: "application/json" },
       });
@@ -33,15 +48,44 @@ class JokeList extends Component {
         isFullLoaded: true,
       }));
     }
+    window.localStorage.setItem("stored", JSON.stringify(this.state.jokes));
+    window.localStorage.setItem("total", this.state.totalJokes);
   }
+
+
+
+
+
+  handleButton() {
+    this.setState(st => ({
+      numClicks: st.numClicks + 1,
+      totalJokes: st.totalJokes + this.props.posts,
+    }), () => this.getJokes() ); //must be here to execute AFTER update.
+    //window.localStorage.setItem("stored", JSON.stringify(this.state.jokes));
+    //window.localStorage.setItem("total", this.state.totalJokes);
+    
+  }
+
+
+
+
+  async componentDidMount() {
+    if (this.state.jokes.length === 0) this.getJokes();
+  }
+
+
+
+
   voteUP(id, delta) {
     this.setState((st) => ({
       jokes: [...st.jokes.map((j) =>
           j.id === id ? { ...j, vote: j.vote + delta } : { ...j }
         ),
       ],
-    }));
+    }), () => window.localStorage.setItem("stored", JSON.stringify(this.state.jokes)));
   }
+
+
 
   render() {
     const mappedJokes = this.state.jokes.map((j) => (
@@ -64,7 +108,7 @@ class JokeList extends Component {
             src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/230/grinning-face-with-one-large-and-one-small-eye_1f92a.png"
             alt="emoji"
           />
-          <button className="JokeList-btn">New jokes</button>
+          <button className="JokeList-btn" onClick={this.handleButton}>New jokes</button>
         </div>
         <div className="JokeList-jokes">{mappedJokes}</div>
       </div>
