@@ -27,50 +27,54 @@ class JokeList extends Component {
       jokes: JSON.parse(this.stringParseJSON) || [],
       totalJokes: JSON.parse(window.localStorage.getItem("total")) || this.props.posts,
       numClicks: 0,
+      isLoaded: JSON.parse(window.localStorage.getItem("isLoaded")) || false,
     };
     this.voteUP = this.voteUP.bind(this);
     this.handleButton = this.handleButton.bind(this);
   }
 
-
-
-
+  
   async getJokes() {
-    
-    while (this.state.jokes.length < this.state.totalJokes) {
+      while (this.state.jokes.length < this.state.totalJokes) {
       let joke = await axios.get("https://icanhazdadjoke.com/", {
         headers: { Accept: "application/json" },
       });
       //console.log(joke.data.id);
       joke.data.vote = 0;
       this.setState((st) => ({
-        jokes: [...st.jokes, joke.data],
-        isFullLoaded: true,
+          jokes: [...st.jokes, joke.data],
       }));
-    }
+    }    
     window.localStorage.setItem("stored", JSON.stringify(this.state.jokes));
     window.localStorage.setItem("total", this.state.totalJokes);
   }
 
-
-
-
+  loadingJokes() {
+    setTimeout(() => {
+      this.getJokes().then(() => {
+        this.setState({
+          isLoaded: true,
+        });
+      });
+    }, 4000);
+    window.localStorage.setItem("isLoaded", true);
+  }
 
   handleButton() {
     this.setState(st => ({
       numClicks: st.numClicks + 1,
+      isLoaded: false,
       totalJokes: st.totalJokes + this.props.posts,
-    }), () => this.getJokes() ); //must be here to execute AFTER update.
-    //window.localStorage.setItem("stored", JSON.stringify(this.state.jokes));
-    //window.localStorage.setItem("total", this.state.totalJokes);
-    
+    }));
+    this.loadingJokes();
+    //must be here to execute AFTER update.
   }
 
 
-
-
   async componentDidMount() {
-    if (this.state.jokes.length === 0) this.getJokes();
+    if (this.state.jokes.length === 0) {
+      this.loadingJokes();
+    }
   }
 
 
@@ -98,6 +102,7 @@ class JokeList extends Component {
         voteUP={this.voteUP}
       />
     ));
+    const isLoading = this.state.isLoaded ? 'JokeList-jokes' : 'loader';
     return (
       <div className="JokeList">
         <div className="JokeList-sidebar">
@@ -110,7 +115,7 @@ class JokeList extends Component {
           />
           <button className="JokeList-btn" onClick={this.handleButton}>New jokes</button>
         </div>
-        <div className="JokeList-jokes">{mappedJokes}</div>
+        <div className={isLoading}>{this.state.isLoaded ? mappedJokes : ''}</div>
       </div>
     );
   }
