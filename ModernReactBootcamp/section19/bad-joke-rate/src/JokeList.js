@@ -8,7 +8,7 @@ class JokeList extends Component {
 
 
   static defaultProps = {
-      posts: 4,
+      posts: 2,
       emoji: [
           "em-nauseated_face",
           "em-disappointed_relieved",
