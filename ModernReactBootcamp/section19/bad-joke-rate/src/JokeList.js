@@ -107,7 +107,7 @@ class JokeList extends Component {
       <div className="JokeList">
         <div className="JokeList-sidebar">
           <h1 className="JokeList-title">
-            <span>Daddy</span> Jokes
+            <span>Dirty Daddy</span> Jokes
           </h1>
           <img
             src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/230/grinning-face-with-one-large-and-one-small-eye_1f92a.png"
