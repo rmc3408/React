@@ -56,7 +56,7 @@ class JokeList extends Component {
           isLoaded: true,
         });
       });
-    }, 4000);
+    }, 3000);
     window.localStorage.setItem("isLoaded", true);
   }
 
