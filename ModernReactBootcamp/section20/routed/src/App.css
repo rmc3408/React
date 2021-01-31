@@ -24,6 +24,9 @@
   color: white;
 
 }
+
+
+
 .router {
   display: flex;
   flex-direction: row;
@@ -49,4 +52,29 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App-nav {
+  overflow: hidden;
+  background-color: #586172;
+  text-align: center;
+  padding: 20px;
+  
+}
+.App-nav a{
+  padding-right: 20px;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.App-nav a:first-child{
+  padding-left: 0;
+  float: left;
+  color: #282c34;
+}
+
+.App-link-active {
+  color: #a9bce2;
+  text-align: center;
+  border-bottom: 5px solid #282c34;
 }
