@@ -17,8 +17,7 @@ class App extends Component {
           <NavLink to="/fish" render={() => <Sardines name="Sardines" />} >FISH</NavLink>
         </nav>
         <Switch>
-          
-          <Route exact path="/pop" render={() => <Pop name="coca-cola" />} />
+          <Route exact path="/pop" render={() => <Pop  name="coca-cola" />} />
           <Route exact path="/chips" render={() => <Chips name="Doritos" />} />
           <Route exact path="/fish" component={Sardines} />
           <Route exact path="/" render={() => <Machine list="List" />} />
