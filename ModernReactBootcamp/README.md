@@ -30,7 +30,7 @@ Section 16: Building Yahtzee &check; <br>
 Section 17: React Lifecycle Methods &check; <br>
 Section 18: LifeCycle Methods & API &check; <br>
 Section 19: Building the Dad Jokes App &check; <br>
-Section 20: React Router: <br>
+Section 20: React Router &check; <br>
 Section 21: Vending Machine Exercise <br>
 Section 22: React Router Patterns <br>
 Section 23: Router Exercises Part 2 <br>
