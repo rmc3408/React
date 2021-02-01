@@ -7,8 +7,8 @@ import Single from './single';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     console.log('App constructor loaded');    
   }
 
