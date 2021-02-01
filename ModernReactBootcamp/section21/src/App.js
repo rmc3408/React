@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { NavLink, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Machine from "./Machine";
+import Pop from "./Pop";
+import Chips from "./Chips";
+import Sardines from "./Sardines";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <nav className="Navbar">
+          <NavLink to="/">Home Page</NavLink>
+          <NavLink to="/pop">POP</NavLink>
+          <NavLink to="/chips">CHIPS</NavLink>
+          <NavLink to="/fish" render={() => <Sardines name="Sardines" />} >FISH</NavLink>
+        </nav>
+        <Switch>
+          
+          <Route exact path="/pop" render={() => <Pop name="coca-cola" />} />
+          <Route exact path="/chips" render={() => <Chips name="Doritos" />} />
+          <Route exact path="/fish" component={Sardines} />
+          <Route exact path="/" render={() => <Machine list="List" />} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
