@@ -2,6 +2,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+.msg {
+  position: absolute;
+  top: 200px;
+  left: 600px;
+  padding: 2rem;
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  text-transform: uppercase;
+  border-radius: 10px;
+  text-align: center;
+}
 
 .Navbar {
   display: block;
@@ -34,7 +45,14 @@
   
 }
 h1 {
+  margin-block-start: auto;
   color: azure;
+  
+}
+.machine {
+  background-image: url('./VendingMachine.png');
+  height:93vmin;
+  background-size: cover;
   
 }
 .Pop-Block {
@@ -44,4 +62,17 @@ h1 {
   vertical-align: middle;
   height: 50vh;
   background-color: rgba(160,160,160,0.6);
+}
+.Pop-spin {
+  animation: spin infinite 4s ease-in-out;
+
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
         <nav className="Navbar">
           <NavLink to="/">Home Page</NavLink>
-          <NavLink to="/pop">POP</NavLink>
+          <NavLink to="/pop">SODA</NavLink>
           <NavLink to="/chips">CHIPS</NavLink>
           <NavLink to="/fish" render={() => <Sardines name="Sardines" />} >FISH</NavLink>
         </nav>
