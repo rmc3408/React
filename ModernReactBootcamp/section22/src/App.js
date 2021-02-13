@@ -15,8 +15,10 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/" component={Search} />
+          {/* In Render, need to pass props as attributes. */}
           <Route exact path="/food/:name" render={(rProps) => <Food {...rProps} />} />
-          <Route exact path="/food/:meat/:drink" component={Meal} />
+          {/* Component automatic pass default Route props = match, history, location */}
+          <Route exact path="/food/:meat/:drink" component={Meal} />  
           <Route render={() => <h1>error 404</h1>} />
         </Switch>
       </div>
