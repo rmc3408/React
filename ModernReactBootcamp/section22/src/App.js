@@ -4,6 +4,7 @@ import Food from "./Food";
 import Meal from "./Meal";
 import "./App.css";
 import Search from "./Search";
+import Login from "./Login";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p> - Router - </p>
+        <Login /> {/* do not belong Router - use withRouter inside component */}
       </header>
       <div>
         <Switch>
