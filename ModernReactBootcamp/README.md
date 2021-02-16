@@ -33,7 +33,7 @@ Section 19: Building the Dad Jokes App &check; <br>
 Section 20: React Router &check; <br>
 Section 21: Vending Machine Exercise &check; <br>
 Section 22: React Router Patterns &check; <br>
-Section 23: Router Exercises Part 2 <br>
+Section 23: Router Exercises Part 2 &check; <br>
 Section 24: The Massive Color Project Pt 1 <br>
 Section 25: The Massive Color Project Pt 2 <br>
 Section 26: JSS & withStyles (Color App) <br>
