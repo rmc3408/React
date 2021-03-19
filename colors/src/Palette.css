@@ -1,7 +1,25 @@
 .Palette {
     height: 100vh;
+    overflow: hidden;
     
 }
 .Palette-colors {
     height: 90%;    
 }
+.slider {
+    width: 340px;
+    margin: 20px 20px;
+    display: inline-block;
+}
+
+.rc-slider-rail {
+ height: 5px;
+}
+
+.rc-slider-handle:hover,
+.rc-slider-handle {
+    background-color: seagreen;
+    border: none;
+    outline: none;
+}
+
