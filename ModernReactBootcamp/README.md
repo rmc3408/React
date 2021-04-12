@@ -34,7 +34,7 @@ Section 20: React Router &check; <br>
 Section 21: Vending Machine Exercise &check; <br>
 Section 22: React Router Patterns &check; <br>
 Section 23: Router Exercises Part 2 &check; <br>
-Section 24: The Massive Color Project Pt 1 <br>
+Section 24: The Massive Color Project Pt 1 &check; <br>
 Section 25: The Massive Color Project Pt 2 <br>
 Section 26: JSS & withStyles (Color App) <br>
 Section 27: The Massive Color Project Pt 3 <br>
@@ -42,7 +42,7 @@ Section 28: The Massive Color Project Pt 4 <br>
 Section 29: The Massive Color Project Pt 5 <br>
 Section 30: The Massive Color Project Pt 6 <br>
 Section 31: The Massive Color Project Pt 7 <br>
-Section 32: Introducing React Hooks <br>
+Section 32: Introducing React Hooks &check; <br>
 Section 33: React Hooks Project <br>
 Section 34: Introducing The Context API! <br>
 Section 35: Using Context with Hooks <br>
