@@ -9,22 +9,26 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import EditTodoForm from './EditTodoForm';
+import useToogle from './useToggle';
 
 const Todolist = (props) => {
-  const edition = (task) => <EditTodoForm edit={props.edit} value={task} />;
+  const [isEdit, toggleEdit] = useToogle();
+
   return (
     <Paper>
       <List> 
         {props.todos.map((p) => (
           <div key={p.id}>
+            {isEdit ? <EditTodoForm edit={props.edit} task={p.task} id={p.id} /> : (<>
             <ListItem>
-                    <Checkbox checked={p.completed} onClick={()=> props.toggle(p.id)} />
-                    <ListItemText style={{ textDecoration: p.completed? 'line-through' : 'none'}}>{p.task}</ListItemText>
+              <Checkbox checked={p.completed} onClick={() => props.toggle(p.id)} />
+              <ListItemText style={{ textDecoration: p.completed ? 'line-through' : 'none' }}>{p.task}</ListItemText>
               <Button variant="contained" color="secondary" onClick={() => props.removal(p.id)}>delete</Button>
-              <Button variant="contained" color="danger" margin='1em' onClick={edition(p.task)}>edit</Button>
+              <Button variant="contained" color="primary" onClick={toggleEdit} >edit</Button>
 
             </ListItem>
             <Divider />
+            </>)}
           </div>
         ))}
       </List>

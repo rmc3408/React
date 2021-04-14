@@ -4,12 +4,16 @@ import {
     TextField
   } from "@material-ui/core";
 
-function EditTodoForm() {
-    const [value, handleChange, reset] = useForm('');
+function EditTodoForm({ task, edit, id }) {
+    const [value, handleChange, reset] = useForm(task);
     return (
-        <div>
-            <TextField margin='normal' value={value} onChange={handleChange} />
-        </div>
+        <form onSubmit={(e) => {
+            //e.preventDefault();
+            edit(id, value);
+            reset();
+        }}> 
+            <TextField margin='normal' value={value} onChange={handleChange} fullWidth />
+        </form>
     )
 }
 
