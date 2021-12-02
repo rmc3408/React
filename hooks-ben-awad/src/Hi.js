@@ -1,11 +1,9 @@
-import React from 'react'
+import React, { memo } from 'react';
+import useRendersCount from './useRendersCount';
 
-function Hi() {
-    return (
-        <div>
-            hii
-        </div>
-    )
-}
+const Hi = memo(({ inc }) => {
+    useRendersCount();
+    return <button onClick={inc}>ADD</button>;
+});
 
 export default Hi

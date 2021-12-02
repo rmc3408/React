@@ -3,7 +3,6 @@ import { useForm } from './useForm';
 import { useFetch } from './useFetch';
 import './App.css';
 import Hellos from './Hellos';
-import Home from './Home';
 
 function App() {
   const [count, setcount] = useState(JSON.parse(localStorage.getItem('count')) | 8);
@@ -62,7 +61,6 @@ function App() {
       <Hellos num={count2} />
 
       <hr />
-      <Home />
 
     </div>
   );
